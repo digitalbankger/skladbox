@@ -1,0 +1,63 @@
+.containers-section {
+    display: flex;
+    gap: 40px;
+    width: 100%;
+  }
+
+    
+  .containers {
+    width: 100%;
+    height: 200px;
+    margin-bottom: 10px;
+    background-size: cover;
+  }
+  
+  .columns-big {
+    width: 44%;
+  }
+  
+  .columns-medium20 {
+    width: 26%;
+  }
+    
+  .columns-medium10 {
+    width: 18%;
+  }
+  
+  .columns-small {
+    width: 12%;
+  }
+
+  
+  
+  .blue-big {
+    background-image: url('/public/assets/img/saas-3/Container-free.png');
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;   
+  }
+
+  
+  .blue-medium20 {
+    background-image: url('/public/assets/img/saas-3/Container-med20-free.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+  }
+
+  .blue-medium10 {
+    background-image: url('/public/assets/img/saas-3/Container-med10-free.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+  }
+
+  .blue-small {
+    background-image: url('/public/assets/img/saas-3/Container-small-free.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  

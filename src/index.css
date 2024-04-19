@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@100;200;300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 
+font-family: 'Exo 2', sans-serif;
+font-family: 'Montserrat', sans-serif; */
+
+.sphere {
+    position: absolute;
+    left: 29%;
+    top: 30%;
+    width: 14%;
+    max-width: none;
+    animation-name: MoveCircle360;
+    animation-timing-function: linear;
+    animation-duration: 40s;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes MoveCircle360 {
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+  }
+}
