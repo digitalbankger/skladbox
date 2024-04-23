@@ -66,10 +66,10 @@ export function Navigation() {
 
                     <div className='hidden sm:flex flex-row pr-7'>
                         <img src="./assets/svg/tel.svg" width={25}/>
-                        <div className='flex flex-col items-end ms-2'>
+                        <a href='tel:+7 (897)-010-26-28' className='flex flex-col items-end ms-2'>
                             <p className='text-base font-exo font-normal text-lead-dark tracking-[0.8px]'>+7 (897)-010-26-28</p>
                             <p className='text-xs font-exo font-extralight text-lead-dark tracking-[0.4px]'>Позвонить по телефону</p>
-                        </div>
+                        </a>
                     </div>
 
                     <div className='hidden sm:flex flex-row items-center sm:mx-12 mx-3'>
@@ -116,9 +116,10 @@ export function Navigation() {
                               <ul className='flex flex-col'>
                                   <span className='text-lg tracking-[0.6px] text-lead-dark font-medium my-3'>МЕНЮ</span>
                                   <Link to="/" className='text-lg tracking-[0.6px] text-lead-dark font-light my-3 transition-transform transform hover:translate-x2'>Главная</Link>
-                                  <Link to="/catalog" className='text-lg tracking-[0.6px] text-lead-dark font-light my-3'>Каталог карт</Link>
-                                  <Link to="/oferta" className='text-lg tracking-[0.6px] text-lead-dark font-light my-3'>Оферта</Link>
-                                  <Link to="/contact" className='text-lg tracking-[0.6px] text-lead-dark font-light my-3'>Контакты</Link>
+                                  <Link to="/#catalog" className='text-lg tracking-[0.6px] text-lead-dark font-light my-3'>Каталог боксов</Link>
+                                  <Link to="/#rent" className='text-lg tracking-[0.6px] text-lead-dark font-light my-3'>О компании</Link>
+                                  <Link to="/#faq" className='text-lg tracking-[0.6px] text-lead-dark font-light my-3'>Часто задаваемые вопросы</Link>
+                                  <Link to="/#contact" className='text-lg tracking-[0.6px] text-lead-dark font-light my-3'>Контакты</Link>
                               </ul>
                               <div className='flex flex-row items-center my-6'>
                                   <img src="./assets/svg/telegram.svg" width={22} />
@@ -127,10 +128,10 @@ export function Navigation() {
 
                               <div className='flex flex-row my-6'>
                                   <img src="./assets/svg/tel.svg" width={22}/>
-                                  <div className='flex flex-col items-end ms-2'>
-                                      <p className='text-base font-exo font-normal text-lead-dark tracking-[0.8px]'>+7 (903) 777-19-98</p>
+                                  <a href='tel:+7 (897)-010-26-28' className='flex flex-col items-end ms-2'>
+                                      <p className='text-base font-exo font-normal text-lead-dark tracking-[0.8px]'>+7 (897)-010-26-28</p>
                                       <p className='text-xs font-exo font-extralight text-lead-dark tracking-[0.4px]'>Позвонить по телефону</p>
-                                  </div>
+                                  </a>
                               </div>
                             </motion.div>
                         </div>

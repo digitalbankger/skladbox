@@ -22,6 +22,7 @@ module.exports = {
         'lead': 'rgb(255 255 255 / 90%)',
         'lead-dark': '#252F43',
         'bluegen': "#3579F4",
+        'dark-lead': '#5b6882',
         'dark-lead': '#5b6882'
       },
       backgroundImage: {

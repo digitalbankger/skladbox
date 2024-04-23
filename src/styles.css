@@ -61,3 +61,27 @@
     background-position: center center;
   }
   
+
+  @media only screen and (max-width: 600px) {
+
+    .columns-big {
+      width: 100%;
+    }
+    
+    .columns-medium20 {
+      width: 80%;
+    }
+      
+    .columns-medium10 {
+      width: 60%;
+    }
+    
+    .columns-small {
+      width: 40%;
+    }
+        
+  .containers {
+    height: 180px;
+    margin-bottom: 50px;
+  }
+  }

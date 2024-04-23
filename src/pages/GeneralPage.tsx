@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import axios from 'axios'
 import { motion, useTransform, useViewportScroll } from 'framer-motion'
 import { Accordion, AccordionItem } from '../components/Accordeon'
 import { animateInView, inLeftMoving, inDownMoving, miniInDownMoving, pulseAnimation } from '../animations'
@@ -46,6 +47,64 @@ export function GeneralPage() {
     };
     const isMobile = window.innerWidth <= 768;
     const imageUrl = './assets/img/saas-3/hero/gen.png';
+
+
+    const [formData, setFormData] = useState({
+        name: '',
+        phone: '',
+        boxSize: '',
+    });
+
+    const [modalOpen, setModalOpen] = useState(false);
+    const [modalMessage, setModalMessage] = useState('');
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+      setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+
+    const handleSubmit = async (e: React.FormEvent) => {
+      e.preventDefault();
+      try {
+        await axios.post(
+          `https://api.telegram.org/bot7182804623:AAHiFno7H-vwCR3iUiaoG0olmoLOAQ-wBZg/sendMessage`,
+          {
+            chat_id: '-1002054199690',
+            text: `Имя: ${formData.name}\nТелефон: ${formData.phone}\nРазмер бокса: ${formData.boxSize}`,
+          }
+        );
+        console.log('Message sent successfully');
+        setModalMessage('Заявка успешно отправлена!');
+        setModalOpen(true);
+      } catch (error) {
+        console.error('Error sending message:', error);
+        setModalMessage('Произошла ошибка при отправке заявки. Пожалуйста, попробуйте еще раз.');
+        setModalOpen(true);
+      }
+    };
+
+    const handleSubmitconsult = async (e: React.FormEvent) => {
+        e.preventDefault();
+        try {
+          await axios.post(
+            `https://api.telegram.org/bot7182804623:AAHiFno7H-vwCR3iUiaoG0olmoLOAQ-wBZg/sendMessage`,
+            {
+              chat_id: '-1002054199690',
+              text: `Консультация:\nИмя: ${formData.name}\nТелефон: ${formData.phone}`,
+            }
+          );
+          console.log('Message sent successfully');
+          setModalMessage('Заявка успешно отправлена!');
+          setModalOpen(true);
+        } catch (error) {
+          console.error('Error sending message:', error);
+          setModalMessage('Произошла ошибка при отправке заявки. Пожалуйста, попробуйте еще раз.');
+          setModalOpen(true);
+        }
+      };
+
+    const closeModal = () => {
+      setModalOpen(false);
+    };
     
     return (
         <>
@@ -82,27 +141,27 @@ export function GeneralPage() {
                         transition={{ duration: 0.9 }}
                     >
 
-<                   div className="bg-white rounded-xl shadow-lg shadow-my-shad-lg p-8 w-full">
+                    <form onSubmit={handleSubmit} className="bg-white rounded-xl shadow-lg shadow-my-shad-lg p-8 w-full">
                         <div className="mb-6">
                           <h2 className="text-xl font-exo font-medium mb-3 sm:mb-4 text-lead-dark">Выберите размер бокса:</h2>
                           <div className="flex flex-col sm:flex-row items-start sm:items-center space-x-0 sm:space-x-6 space-y-3 sm:space-y-0">
                             <div className='flex flex-row space-x-6'>
                                 <label className='font-exo font-light text-lead-dark'>
-                                  <input type="radio" name="boxSize" value="small" className="mr-3 text-lead-dark" />
+                                  <input type="radio" name="boxSize" value="Бокс 40ft" className="mr-3 text-lead-dark" onChange={handleChange}/>
                                   Бокс 40ft
                                 </label>
                                 <label className='font-exo font-light text-lead-dark'>
-                                  <input type="radio" name="boxSize" value="medium" className="mr-3 text-lead-dark" />
+                                  <input type="radio" name="boxSize" value="Бокс 20ft" className="mr-3 text-lead-dark" onChange={handleChange}/>
                                   Бокс 20ft
                                 </label>
                             </div>
                             <div className='flex flex-row space-x-6'>
                                 <label className='font-exo font-light text-lead-dark'>
-                                  <input type="radio" name="boxSize" value="small" className="mr-3 text-lead-dark" />
+                                  <input type="radio" name="boxSize" value="10ft" className="mr-3 text-lead-dark" onChange={handleChange}/>
                                   Бокс 10ft
                                 </label>
                                 <label className='font-exo font-light text-lead-dark'>
-                                  <input type="radio" name="boxSize" value="medium" className="mr-3 text-lead-dark" />
+                                  <input type="radio" name="boxSize" value="5ft" className="mr-3 text-lead-dark" onChange={handleChange}/>
                                   Бокс 5ft
                                 </label>
                             </div>
@@ -110,18 +169,27 @@ export function GeneralPage() {
                         </div>
                         <div className='flex flex-col sm:flex-row justify-between items-center gap-1 sm:gap-3'>
                             <div className='flex flex-row space-x-3 w-full sm:w-2/3'>
-                                <div className="mb-3 sm:mb-6">
-                                  <label htmlFor="name" className="block text-lg font-exo font-light mb-1">Имя:</label>
-                                  <input type="text" id="name" name="name" className="w-full border-gray-200 rounded-xl px-3 py-4" placeholder='Ваше имя'/>
-                                </div>
-                                <div className="mb-3 sm:mb-6">
-                                  <label htmlFor="phone" className="block text-lg font-exo font-light mb-1">Телефон:</label>
-                                  <input type="text" id="phone" name="phone" className="w-full border-gray-200 rounded-xl px-3 py-4" placeholder='Ваш телефон' />
-                                </div>
+                            <div className="mb-3 sm:mb-6">
+                                <label htmlFor="name" className="block text-lg font-exo font-light mb-1">Имя:</label>
+                                <input type="text" id="name" name="name" className="w-full border-gray-200 rounded-xl px-3 py-4" placeholder='Ваше имя' onChange={handleChange} />
                             </div>
-                            <button className='w-full sm:w-1/3 rounded-xl py-4 px-4 mt-1 border-[0.5px] border-btnsec flex flex-row items-center justify-center bg-bluegen text-lead font-exo tracking-[0.5] text-base'>Арендовать</button>
+                            <div className="mb-3 sm:mb-6">
+                                <label htmlFor="phone" className="block text-lg font-exo font-light mb-1">Телефон:</label>
+                                <input type="text" id="phone" name="phone" className="w-full border-gray-200 rounded-xl px-3 py-4" placeholder='Ваш телефон' onChange={handleChange} />
+                            </div>
+                            </div>
+                            <button className='w-full sm:w-1/3 rounded-xl py-4 px-4 mt-1 border-[0.5px] border-btnsec flex flex-row items-center justify-center bg-bluegen text-lead font-exo tracking-[0.5] text-base' type="submit">Арендовать</button>
                         </div>
-                    </div>
+                    </form>
+
+                    {modalOpen && (
+                        <div className="fixed top-0 left-0 w-full h-full bg-gray-900 bg-opacity-50 flex justify-center items-center z-[99999]">
+                        <div className="bg-white p-8 rounded-lg">
+                            <p className="text-xl font-exo text-lead-dark font-semibold mb-4">{modalMessage}</p>
+                            <button className="bg-blue-500 text-white px-4 py-2 rounded-md" onClick={closeModal}>Закрыть</button>
+                        </div>
+                        </div>
+                    )}
                     </motion.div>
                 </div>
                 <div className='w-[100%] sm:w-[60%] sm:pt-0 pt-3'>
@@ -195,6 +263,7 @@ export function GeneralPage() {
             viewport={{once: true}}
             variants={animateInView}
             transition={{ duration: 0.8 }}
+            id='catalog'
         >
             <div className='container flex flex-col relative sect-line bg-left bg-no-repeat bg-contain'>
                 <motion.h2
@@ -318,8 +387,8 @@ export function GeneralPage() {
                 </div>
             </div>
 
-            <div className='container flex flex-col items-center relative mt-20 p-5 sm:p-10'>
-                <h2 className='font-exo text-black font-semibold text-3xl sm:text-4/5xl leading-[1.3em] mt-0 sm:mt-10 text-center'>Как арендовать бокс?</h2>
+            <div id='rent' className='container flex flex-col items-center relative mt-20 p-5 sm:p-10'>
+                <h2 className='font-exo text-lead-dark font-semibold text-3xl sm:text-4/5xl leading-[1.3em] mt-0 sm:mt-10 text-center'>Как арендовать бокс?</h2>
 
                 <motion.div
                     initial="hidden"
@@ -387,28 +456,28 @@ export function GeneralPage() {
                     </motion.p>
 
                     <div className='flex flex-row gap-4 w-full my-11'>
-                        <div className='flex flex-col w-1/3'>
+                        <div className='flex flex-col w-1/2 sm:w-1/3'>
                             <p className='font-exo text-2xl text-white mb-3'>Для бизнеса</p>
                             <div className='flex flex-row mb-1 items-center'>
-                                <img src='./assets/svg/item.svg' width={20}/><p className='font-exo text-xl ps-2 text-lead font-extralight'>Хранение товаров</p>
+                                <img src='./assets/svg/item.svg' width={20}/><p className='font-exo text-base sm:text-xl ps-2 text-lead font-extralight'>Хранение товаров</p>
                             </div>
                             <div className='flex flex-row mb-1 items-center'>
-                                <img src='./assets/svg/item.svg' width={20}/><p className='font-exo text-xl ps-2 text-lead font-extralight'>Сезонное хранение</p>
+                                <img src='./assets/svg/item.svg' width={20}/><p className='font-exo text-base sm:text-xl ps-2 text-lead font-extralight'>Сезонное хранение</p>
                             </div>
                             <div className='flex flex-row mb-1 items-center'>
-                                <img src='./assets/svg/item.svg' width={20}/><p className='font-exo text-xl ps-2 text-lead font-extralight'>Хранение вещей и мебели</p>
+                                <img src='./assets/svg/item.svg' width={20}/><p className='font-exo text-base sm:text-xl ps-2 text-lead font-extralight'>Хранение вещей и мебели</p>
                             </div>
                         </div>
-                        <div className='flex flex-col w-1/3'>
+                        <div className='flex flex-col w-1/2 sm:w-1/3'>
                             <p className='font-exo text-2xl text-white mb-3'>Для дома</p>
                             <div className='flex flex-row mb-1 items-center'>
-                                <img src='./assets/svg/item.svg' width={20}/><p className='font-exo text-xl ps-2 text-lead font-extralight'>Хранение товаров</p>
+                                <img src='./assets/svg/item.svg' width={20}/><p className='font-exo text-base sm:text-xl ps-2 text-lead font-extralight'>Хранение шин</p>
                             </div>
                             <div className='flex flex-row mb-1 items-center'>
-                                <img src='./assets/svg/item.svg' width={20}/><p className='font-exo text-xl ps-2 text-lead font-extralight'>Сезонное хранение</p>
+                                <img src='./assets/svg/item.svg' width={20}/><p className='font-exo text-base sm:text-xl ps-2 text-lead font-extralight'>Сезонное хранение</p>
                             </div>
                             <div className='flex flex-row mb-1 items-center'>
-                                <img src='./assets/svg/item.svg' width={20}/><p className='font-exo text-xl ps-2 text-lead font-extralight'>Хранение мото транспорта</p>
+                                <img src='./assets/svg/item.svg' width={20}/><p className='font-exo text-base sm:text-xl ps-2 text-lead font-extralight'>Хранение мото транспорта</p>
                             </div>
                         </div>
                     </div>
@@ -427,19 +496,19 @@ export function GeneralPage() {
                         transition={{ duration: 0.9 }}
                     >
                     
-                    <div className="w-2/3">
-                        <div className='flex flex-col justify-between gap-2'>
+                    <form onSubmit={handleSubmitconsult}  className="w-full sm:w-2/3">
+                        <div className='flex flex-col justify-between gap-2 pb-20 sm:pb-0'>
                             <div className='flex sm:flex-row gap-4 w-full'>
                                 <div className="mb-6 w-full">
-                                    <input type="text" id="name" name="name" className="w-full border-none rounded-xl px-3 py-5 bg-[#ffffff3b] text-white placeholder-[#ffffffbf]" placeholder='Ваше имя'/>
+                                    <input type="text" id="name" name="name" className="w-full border-none rounded-xl px-3 py-5 bg-[#ffffff3b] text-white placeholder-[#ffffffbf]" placeholder='Ваше имя' onChange={handleChange}/>
                                 </div>
                                 <div className="mb-6 w-full">
-                                    <input type="text" id="phone" name="phone" className="w-full border-none rounded-xl px-3 py-5 bg-[#ffffff3b] text-white placeholder-[#ffffffbf]" placeholder='Ваш телефон' />
+                                    <input type="text" id="phone" name="phone" className="w-full border-none rounded-xl px-3 py-5 bg-[#ffffff3b] text-white placeholder-[#ffffffbf]" placeholder='Ваш телефон' onChange={handleChange}/>
                                 </div>
                             </div>
-                            <button className=' rounded-xl py-5 px-4 mt-1 bg-white text-bluegen font-exo font-medium tracking-[0.4] text-lg'>Получить консультацию</button>
+                            <button className=' rounded-xl py-5 px-4 mt-1 sm:mt-0 bg-white text-bluegen font-exo font-medium tracking-[0.4] text-lg' type='submit'>Получить консультацию</button>
                         </div>
-                    </div>
+                    </form>
                     </motion.div>
                 </div>
             </div>
@@ -453,26 +522,26 @@ export function GeneralPage() {
                 className='container flex flex-col items-center px-3 sm:px-10'
                 id='cont'
             >
-                <h2 className='font-exo text-black font-semibold text-3xl sm:text-4/5xl'>Онлайн аренда бокса</h2>
-                <p className='text-black-600 tracking-[1px] sm:w-[90%] sm:text-center font-exo text-lg font-extralight leading-normal mt-6 mb-11'>Выберите интересующий Вас бокс</p>
+                <h2 className='font-exo text-lead-dark font-semibold text-3xl sm:text-4/5xl'>Онлайн аренда бокса</h2>
+                <p className='text-lead-dark-600 tracking-[1px] sm:w-[90%] sm:text-center font-exo text-lg font-extralight leading-normal mt-6 mb-11'>Выберите интересующий Вас бокс</p>
                 <ContainerBox />
 
-                <div className='container w-full flex flex-col items-center relative mt-20 p-5 sm:p-0 sm:pt-10'>
-                    <h4 className='w-full font-exo text-black font-medium text-left text-3xl sm:text-2xl mt-10 mb-2'>Аренда складского помещения в Лыткарино</h4>
-                    <p className='text-black-600 tracking-[1px] sm:text-left font-exo text-lg font-light leading-normal mt-6 mb-11'>
+                <div className='container w-full flex flex-col items-center relative mt-20 sm:p-0 sm:pt-10'>
+                    <h4 className='w-full font-exo text-lead-dark font-semibold text-left text-3xl sm:text-2xl mt-10 mb-2'>Аренда складского помещения в Лыткарино</h4>
+                    <p className='text-lead-dark-600 tracking-[1px] sm:text-left font-exo text-base sm:text-lg font-light leading-normal mt-6 mb-11'>
                         Наша компания предоставляет в аренду складские боксы. Наши складские боксы отличаются от традиционных решений тем, что для их использования не требуется открывать никаких счетов. Вы можете арендовать боксы определенного размера и использовать их для хранения различных товаров и материалов. Кроме того, мы предлагаем гибкие условия аренды и возможность адаптировать пространство под ваши индивидуальные потребности. Наши складские боксы обеспечивают надежную и безопасную защиту вашего имущества, позволяя вам хранить ваши вещи в удобном и доступном месте.
                     </p>
-                    <h4 className='w-full font-exo text-black font-medium text-left text-3xl sm:text-2xl mt-2 mb-2'>Что можно хранить в боксах?</h4>
-                    <p className='text-black-600 tracking-[1px] sm:text-left font-exo text-lg font-light leading-normal mt-6 mb-6'>
+                    <h4 className='w-full font-exo text-lead-dark font-medium text-left text-3xl sm:text-2xl mt-2 mb-2'>Что можно хранить в боксах?</h4>
+                    <p className='text-lead-dark-600 tracking-[1px] sm:text-left font-exo text-base sm:text-lg font-light leading-normal mt-6 mb-6'>
                         Кроме того, мы предлагаем гибкие условия аренды и возможность адаптировать пространство под ваши индивидуальные потребности. 
                     </p>
-                            <ul className='list-disc text-black-600 tracking-[1px] sm:text-left font-exo text-lg font-light leading-normal ml-2'>
+                            <ul className='list-disc text-lead-dark-600 tracking-[1px] sm:text-left font-exo text-base sm:text-lg font-light leading-normal ml-2'>
                                 <li className='mb-2'><span className='font-semibold'>Наши складские</span>- боксы обеспечивают надежную и безопасную защиту вашего имущества, позволяя вам хранить ваши вещи в удобном и доступном месте.</li>
                                 <li className='mb-2'><span className='font-semibold'>Наши складские</span>- боксы обеспечивают надежную и безопасную защиту вашего имущества, позволяя вам хранить ваши вещи в удобном и доступном месте.</li>
                                 <li className='mb-2'><span className='font-semibold'>Наши складские</span>- боксы обеспечивают надежную и безопасную защиту вашего имущества, позволяя вам хранить ваши вещи в удобном и доступном месте.</li>
                                 <li className='mb-2'><span className='font-semibold'>Наши складские</span>- боксы обеспечивают надежную и безопасную защиту вашего имущества, позволяя вам хранить ваши вещи в удобном и доступном месте.</li>
                             </ul> 
-                    <p className='text-black-600 tracking-[1px] sm:text-left font-exo text-lg font-light leading-normal mt-6 mb-11'> 
+                    <p className='text-lead-dark-600 tracking-[1px] sm:text-left font-exo text-base sm:text-lg font-light leading-normal mt-6 mb-11'> 
                         Кроме того, мы предлагаем гибкие условия аренды и возможность адаптировать пространство под ваши индивидуальные потребности. 
                     </p>
                 </div>
@@ -481,10 +550,11 @@ export function GeneralPage() {
         
         {/* Секция 5 faq */}
         <div 
+            id='faq'
             className='section px-5 flex justify-center bg-center bg-cover pt-14'
         >
             <div className='container flex flex-col items-center'>
-                <h2 className='font-exo text-black font-semibold text-3xl sm:text-4xl mb-10'>Ответы на популярные вопросы</h2>
+                <h2 className='font-exo text-lead-dark font-semibold text-3xl sm:text-4xl mb-10'>Ответы на популярные вопросы</h2>
                 <div className='w-[100%] flex justify-center py-5'>
                     
                     <Accordion 
@@ -498,18 +568,19 @@ export function GeneralPage() {
 
         {/* Секция 6 карта */}
         <div 
-            className='section px-3 flex justify-center bg-center bg-cover pt-10 relative'
+            id='contact'
+            className='section px-3 flex flex-col sm:flex-row justify-center bg-center bg-cover pt-10 relative'
         >
-            <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Abf40f8ab007f7266cbc1b1d69141140f23a323b4b5333c202d56ed0ee8d4bd46&amp;source=constructor" width="50%" height="400" style={{ position:'absolute', bottom: '0', right: '0'}}></iframe>
+            <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Abf40f8ab007f7266cbc1b1d69141140f23a323b4b5333c202d56ed0ee8d4bd46&amp;source=constructor" width="50%" height="400" style={{ bottom: '0', right: '0'}} className='mapa'></iframe>
 
             <div 
                 className='container flex flex-col items-center px-3 sm:px-10'
             >
 
                 <div className='flex flex-col sm:flex-row items-end w-full mt-20'>
-                    <div className='w-1/2 sm:h-[390px] flex flex-col gap-4 justify-center pb-8'>
+                    <div className='w-full sm:w-1/2 sm:h-[390px] flex flex-col gap-4 justify-center pb-8'>
                     <motion.h2
-                        className='sm:w-[100%] w-[100%] font-exo text-2xl font-semibold sm:text-4/5xl leading-[2.4rem] sm:leading-[1.3em] text-lead-dark text-left'
+                        className='sm:w-[100%] w-[100%] font-exo text-3xl font-semibold sm:text-4/5xl leading-[2.4rem] sm:leading-[1.3em] text-lead-dark text-left'
                         variants={miniInDownMoving}
                         transition={{ duration: 0.5 }}
                     >

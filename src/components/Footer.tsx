@@ -12,14 +12,13 @@ export function Footer() {
       { name: 'Политика в отношении обработки персональных данных', href: '#' },
     ],
     company: [
-      { name: 'О компании', href: '#' },
-      { name: 'Оплата', href: '#' },
-      { name: 'Контакты', href: '#' },
+      { name: 'О компании', href: '/' },
+      { name: 'Аренда', href: '/#cont' },
+      { name: 'Контакты', href: '/#contact' },
     ],
     legal: [
       { name: '+7 (897)-010-26-28', href: 'tel:+7 (897)-010-26-28' },
-      { name: 'help@cardsell.ru', href: '#' },
-      { name: '@cardsell', href: '#' },
+      { name: 'info@skladbox.online', href: 'mailto:info@skladbox.online' },
     ],
     social: [
       {

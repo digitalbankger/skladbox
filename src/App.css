@@ -256,7 +256,7 @@ nav {
   background-image: url(../public/assets/svg/paral.svg);
   background-repeat: no-repeat;
   background-size: contain;
-  opacity: 0.3;
+  opacity: 0.2;
   z-index: 0;
 }
 
@@ -277,6 +277,9 @@ nav {
   z-index: 0;
 }
 
+.mapa {
+  position: absolute;
+}
 
 @media only screen and (max-width: 600px) {
   .features-item {
@@ -306,12 +309,17 @@ nav {
     top: 100px;
     left: 0;
     width: 60%;
-    height: 76%;
+    height: 70%;
     background-image: url(../public/assets/svg/paral.svg);
     background-repeat: no-repeat;
     background-size: contain;
-    opacity: 0.3;
+    opacity: 0.1;
     z-index: 0;
+  }
+  .mapa {
+    width: 100% !important;
+    position: relative !important;
+    order: 2;
   }
 }
 
