@@ -281,6 +281,25 @@ nav {
   position: absolute;
 }
 
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #3579f4;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
 @media only screen and (max-width: 600px) {
   .features-item {
     width: 100%;
@@ -320,6 +339,10 @@ nav {
     width: 100% !important;
     position: relative !important;
     order: 2;
+  }
+  .modal-content {
+    padding: 30px;
+    width: 90%;
   }
 }
 

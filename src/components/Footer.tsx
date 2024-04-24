@@ -102,7 +102,7 @@ export function Footer() {
         Footer
       </h2>
       <div className="mx-auto pb-8 pt-10 sm:pt-14 lg:pt-32">
-        <div className="md:flex md:flex-row items-start md:gap-8">
+        <div className="md:flex md:flex-row items-start justify-between md:gap-8">
           <div className="space-y-8 sm:w-1/3 w-[100%]">
             <div className='flex flex-row items-center'>
                 <span className='font-exo text-white tracking-[1.2px] text-xl font-medium ms-1'>SkladBox</span>
@@ -123,7 +123,11 @@ export function Footer() {
             </div>
           </div>
 
-          <div className="sm:w-2/3 w-full mt-10 sm:mt-0 flex flex-col sm:grid grid-cols-3 gap-8 xl:col-span-3 xl:mt-0">
+          <div className="sm:w-2/3 w-full mt-10 sm:mt-0 flex flex-col justify-end sm:grid grid-cols-3 gap-8 xl:col-span-3 xl:mt-0">
+            <div className="md:grid md:grid-cols-1 md:gap-8">
+                <div>
+                </div>
+            </div>
             <div className="md:grid md:grid-cols-1 md:gap-8">
                 <div>
                     <h3 className="text-slate-700 tracking-[0.4px] font-exo text-xl font-medium leading-normal text-white">Компания</h3>
@@ -138,20 +142,7 @@ export function Footer() {
                     </ul>
                 </div>
             </div>
-            <div className="md:grid md:grid-cols-1 md:gap-8">
-                <div className="mt-10 md:mt-0">
-                    <h3 className="text-slate-700 tracking-[0.4px] font-exo text-xl font-medium leading-normal text-white">Политика</h3>
-                    <ul role="list" className="w-[90%] mt-6 space-y-4">
-                    {navigation.support.map((item) => (
-                        <li key={item.name}>
-                        <a href={item.href} className="text-base font-light leading-6 text-lead hover:text-white trackink-[0.2px]">
-                            {item.name}
-                        </a>
-                        </li>
-                    ))}
-                    </ul>
-                </div>
-            </div>
+            
             <div className="md:grid md:grid-cols-1 md:gap-8">
                 <div className="mt-10 md:mt-0">
                     <h3 className="text-slate-700 tracking-[0.4px] font-exo text-xl font-medium leading-normal text-white">Контакты</h3>

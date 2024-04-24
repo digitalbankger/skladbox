@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom'
 import { useShopCart } from '../context/Catalog-context';
 import { ShopCart } from './ShopCart';
 import { motion } from 'framer-motion';
+import axios from 'axios';
 
 export function Navigation() {
     const location = useLocation();
@@ -11,6 +12,42 @@ export function Navigation() {
     const [isSticky, setSticky] = useState(false);
     const { openCart, closeCart, isOpen, cartQuantity } = useShopCart()
     const [isMenuOpen, setMenuOpen] = useState(false);
+    const [modalOpen, setModalOpen] = useState(false);
+    const [modalMessage, setModalMessage] = useState('');
+    const [formData, setFormData] = useState({
+      name: '',
+      phone: '',
+    });
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+
+    const handleSubmitconsult = async (e: React.FormEvent) => {
+        e.preventDefault();
+        try {
+          await axios.post(
+            `https://api.telegram.org/bot7182804623:AAHiFno7H-vwCR3iUiaoG0olmoLOAQ-wBZg/sendMessage`,
+            {
+              chat_id: '-1002054199690',
+              text: `*Обратный звонок:*\nИмя: ${formData.name}\nТелефон: ${formData.phone}`,
+              parse_mode: 'Markdown',
+            }
+          );
+          console.log('Message sent successfully');
+          setModalMessage('Заявка успешно отправлена!');
+          setModalOpen(true);
+        } catch (error) {
+          console.error('Error sending message:', error);
+          setModalMessage('Произошла ошибка при отправке заявки. Пожалуйста, попробуйте еще раз.');
+          setModalOpen(true);
+        }
+      };
+
+
+    const toggleModal = () => {
+        setModalOpen(!modalOpen);
+    };
 
     const toggleMenu = () => {
       setMenuOpen(!isMenuOpen);
@@ -75,11 +112,41 @@ export function Navigation() {
                     <div className='hidden sm:flex flex-row items-center sm:mx-12 mx-3'>
                         <button
                             className='rounded-[8px] py-3 px-6 border-[1px] border-bluegen hover:bg-bluegen hover:text-lead flex flex-row items-center text-lead text-lead-dark font-exo tracking-[0.5px] text-base'
-                            onClick={() => modal()}
+                            onClick={() => toggleModal()}
                         >
                             Заказать звонок
                         </button>
                     </div>
+
+                    {modalOpen && (
+                    <div 
+                        className="modal-container"
+                        onClick={(e) => {
+                          if (e.target === e.currentTarget) {
+                            toggleModal();
+                          }
+                        }}
+                    >
+                        <div className="modal-content">
+                            <h2 className='w-full font-mont font-medium text-2xl sm:text-2/5xl text-center leading-snug text-lead text-left mb-4'>
+                                Заполните форму
+                            </h2>
+                            <form onSubmit={handleSubmitconsult}  className="w-full">
+                                <div className='flex flex-col justify-between gap-2 pb-20 sm:pb-0'>
+                                    <div className='flex sm:flex-row gap-4 w-full'>
+                                        <div className="mb-6 w-full">
+                                            <input type="text" id="name" name="name" className="w-full border-none rounded-xl px-3 py-5 bg-[#ffffff3b] text-white placeholder-[#ffffffbf]" placeholder='Ваше имя' onChange={handleChange}/>
+                                        </div>
+                                        <div className="mb-6 w-full">
+                                            <input type="text" id="phone" name="phone" className="w-full border-none rounded-xl px-3 py-5 bg-[#ffffff3b] text-white placeholder-[#ffffffbf]" placeholder='Ваш телефон' onChange={handleChange}/>
+                                        </div>
+                                    </div>
+                                    <button className=' rounded-xl py-5 px-4 mt-1 sm:mt-0 bg-white text-bluegen font-exo font-medium tracking-[0.4] text-lg' type='submit'>Заказать звонок</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    )}
 
                     <div 
                         className={`relative flex ${isMenuOpen ? 'hidden' : ''}`}
@@ -115,16 +182,10 @@ export function Navigation() {
                               </span>
                               <ul className='flex flex-col'>
                                   <span className='text-lg tracking-[0.6px] text-lead-dark font-medium my-3'>МЕНЮ</span>
-                                  <Link to="/" className='text-lg tracking-[0.6px] text-lead-dark font-light my-3 transition-transform transform hover:translate-x2'>Главная</Link>
-                                  <Link to="/#catalog" className='text-lg tracking-[0.6px] text-lead-dark font-light my-3'>Каталог боксов</Link>
-                                  <Link to="/#rent" className='text-lg tracking-[0.6px] text-lead-dark font-light my-3'>О компании</Link>
-                                  <Link to="/#faq" className='text-lg tracking-[0.6px] text-lead-dark font-light my-3'>Часто задаваемые вопросы</Link>
-                                  <Link to="/#contact" className='text-lg tracking-[0.6px] text-lead-dark font-light my-3'>Контакты</Link>
+                                  <a href="/#catalog" className='text-lg tracking-[0.6px] text-lead-dark font-light my-3'>Каталог боксов</a>
+                                  <a href="/#cont" className='text-lg tracking-[0.6px] text-lead-dark font-light my-3'>Аренда</a>
+                                  <a href="/#contact" className='text-lg tracking-[0.6px] text-lead-dark font-light my-3'>Контакты</a>
                               </ul>
-                              <div className='flex flex-row items-center my-6'>
-                                  <img src="./assets/svg/telegram.svg" width={22} />
-                                  <p className='text-base font-exo font-normal text-lead-dark tracking-[0.8px] ms-2'>Telegram</p>
-                              </div>
 
                               <div className='flex flex-row my-6'>
                                   <img src="./assets/svg/tel.svg" width={22}/>

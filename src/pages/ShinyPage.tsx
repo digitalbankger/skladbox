@@ -8,46 +8,7 @@ import ContainerBox from '../components/ContainerBox'
 
 
 
-export function GeneralPage() {
-
-    const [isFlipped, setIsFlipped] = useState(false);
-
-    const handleClick = () => {
-      setIsFlipped(!isFlipped);
-    };
-
-    const { scrollYProgress } = useViewportScroll();
-    const x = useTransform(scrollYProgress, [0, 1], [60, -60]);
-    const y = useTransform(scrollYProgress, [0, 1], [0, 0]);
-
-    const accordionItems: AccordionItem[] = [
-      { title: 'Как оплачивать покупки вашей картой?', content: 'Как любой обычной картой, просто вводите в нужные поля данные купленной вами карты и оплачиваете. Если на сайте нужно подтверждение по коду – код придет вам в Telegram' },
-      { title: 'Куда придет код покупки? Или изменения баланса?', content: 'Все коды приходят вам в бот Telegram, никаких номеров, емейлов мы от вас не получаем' },
-      { title: 'Можно ли пополнить карту/снять наличные?', content: 'Нет. Все карты уже идут с определенным балансом, пополнить карту или снять наличные нельзя' },
-      { title: 'Сколько карт я могу купить?', content: 'Сколько угодно, если карты есть в наличии – вы можете их купить' },
-    ]
-
-    const circleStyle = {
-      width: '12px',
-      height: '12px',
-      borderRadius: '50%',
-      backgroundColor: 'rgb(175 79 231)',
-    };
-    
-    const cardStyle = {
-        maxWidth: '348px',
-        right: '6rem',
-        transform: 'translate3d(-46px, 0px, 0px)'
-    }
-
-    const navigate = useNavigate();
-
-    const handleLocShop = () => {
-      navigate('/catalog');
-    };
-    const isMobile = window.innerWidth <= 768;
-    const imageUrl = './assets/img/saas-3/hero/gen.png';
-
+export function ShinyPage() {
 
     const [formData, setFormData] = useState({
         name: '',
@@ -110,7 +71,6 @@ export function GeneralPage() {
         <>
         <motion.div 
             className='section h-auto sm:h-[700px] flex justify-center py-3 bg-[#fafcff] bg-top-44 sm:bg-right bg-[length:100%] sm:bg-[length:62%] bg-no-repeat'
-            style={{ backgroundImage: `url(${imageUrl})` }}
             initial="hidden"
             whileInView="visible"
             viewport={{once: true}}
