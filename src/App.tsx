@@ -25,8 +25,6 @@ function ScrollToTop() {
 function App() {
   return (
     <>
-    <AnimatePresence>
-    <ShopCartProvider>
       <Navigation />
       <Routes>
         <Route path="/" element={<GeneralPage />} />
@@ -38,8 +36,6 @@ function App() {
       </Routes>
       <ScrollToTop />
       <Footer />
-    </ShopCartProvider>
-    </AnimatePresence>
     </>
   )
 }
