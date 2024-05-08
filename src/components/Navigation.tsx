@@ -168,7 +168,7 @@ export function Navigation() {
                             onClick={toggleMenu}
                         >
                             <motion.div 
-                                className="absolute ml-2 bg-white shadow-md w-2/3 sm:w-[300px] h-[100vh] right-0 top-0 p-8"
+                                className="absolute ml-2 bg-white shadow-md w-[80%] sm:w-[300px] h-[100vh] right-0 top-0 p-8"
                                 transition={{ duration: 0.5 }}
                                 initial={{ x: 100 }}
                                 animate={{ x: 0 }}
@@ -182,6 +182,7 @@ export function Navigation() {
                               </span>
                               <ul className='flex flex-col'>
                                   <span className='text-lg tracking-[0.6px] text-lead-dark font-medium my-3'>МЕНЮ</span>
+                                  <a href="/shiny" className='text-lg tracking-[0.6px] text-lead font-normal my-3 bg-bluegen p-2 rounded-lg'>Хранение шин</a>
                                   <a href="/#catalog" className='text-lg tracking-[0.6px] text-lead-dark font-light my-3'>Каталог боксов</a>
                                   <a href="/#cont" className='text-lg tracking-[0.6px] text-lead-dark font-light my-3'>Аренда</a>
                                   <a href="/#contact" className='text-lg tracking-[0.6px] text-lead-dark font-light my-3'>Контакты</a>

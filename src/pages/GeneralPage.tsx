@@ -109,7 +109,7 @@ export function GeneralPage() {
     return (
         <>
         <motion.div 
-            className='section h-auto sm:h-[700px] flex justify-center py-3 bg-[#fafcff] bg-top-44 sm:bg-right bg-[length:100%] sm:bg-[length:62%] bg-no-repeat'
+            className='section h-auto sm:h-[700px] flex justify-center py-3 bg-[#f7faff] bg-top-44 sm:bg-right bg-[length:100%] sm:bg-[length:62%] bg-no-repeat'
             style={{ backgroundImage: `url(${imageUrl})` }}
             initial="hidden"
             whileInView="visible"

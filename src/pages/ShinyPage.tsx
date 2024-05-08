@@ -5,6 +5,7 @@ import { Accordion, AccordionItem } from '../components/Accordeon'
 import { animateInView, inLeftMoving, inDownMoving, miniInDownMoving, pulseAnimation } from '../animations'
 import { Link, useNavigate } from 'react-router-dom'
 import ContainerBox from '../components/ContainerBox'
+import WheelForm from '../components/WheelForm'
 
 
 
@@ -18,6 +19,9 @@ export function ShinyPage() {
 
     const [modalOpen, setModalOpen] = useState(false);
     const [modalMessage, setModalMessage] = useState('');
+
+    const isMobile = window.innerWidth <= 768;
+    const imageUrl = isMobile ? './assets/img/saas-3/gen-shiny-mob.webp' : './assets/img/saas-3/gen-shiny.webp';
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
       setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -78,67 +82,46 @@ export function ShinyPage() {
             transition={{ duration: 0.8 }}
         >
             <div 
-                className='container flex flex-col w-[100%] rounded-[20px] p-5 sm:p-10 pt-20 pb-10 sm:py-0 sm:flex-row items-start sm:items-center relative'
+                className='container flex flex-col w-[100%] rounded-[30px] p-5 sm:p-10 mt-20 pt-20 pb-10 sm:py-10 sm:pt-0 sm:flex-row items-start sm:items-center relative bg-no-repeat bg-cover'
+                style={{ backgroundImage: `url(${imageUrl})` }}
             >
                 <div className='w-[100%] sm:w-[40%]'>
                     <motion.h1
-                        className='sm:w-[100%] w-[100%] mt-4 font-exo text-3xl font-semibold uppercase sm:text-4/5xl leading-[2.4rem] sm:leading-[1.3em] text-lead-dark'
+                        className='sm:w-[100%] w-[100%] font-exo text-3xl font-semibold uppercase sm:text-4/5xl leading-[2.4rem] sm:leading-[1.3em] text-lead'
                         variants={miniInDownMoving}
                         transition={{ duration: 0.5 }}
                     >
-                        Аренда складских боксов в Лыткарино
+                        Услуги безопасного хранения авто шин
                     </motion.h1>
                     <motion.p 
-                        className='w-[100%] sm:w-[100%] text-lead-dark tracking-[1px] font-exo text-xl sm:text-xl font-extralight leading-normal mt-4 mb-11'
-                        variants={miniInDownMoving} 
+                        className='w-[100%] sm:w-[90%] text-lead tracking-[1px] font-exo text-base sm:text-xl font-extralight leading-normal mt-4 mb-11'
+                        variants={miniInDownMoving}
                         transition={{ duration: 0.7 }}
                     >
-                        Предлагаем складские боксы для надежного хранения ваших вещей!
+                        ✓ Соблюдение температурного режима<br></br>✓ Наличие вентиляции
                     </motion.p>
                     <motion.div 
-                        className='flex flex-row justify-between sm:-mr-12 sm:-mb-20 mt-60 sm:mt-0'
-                        variants={miniInDownMoving} 
+                        className='flex flex-row justify-between mt-10 sm:mt-0'
+                        variants={miniInDownMoving}
                         transition={{ duration: 0.9 }}
                     >
 
-                    <form onSubmit={handleSubmit} className="bg-white rounded-xl shadow-lg shadow-my-shad-lg p-8 w-full">
+                    <form onSubmit={handleSubmit} className="bg-[#ffffff26] rounded-xl shadow-lg shadow-my-shad-lg xs:p-4 p-6 w-full">
                         <div className="mb-6">
-                          <h2 className="text-xl font-exo font-medium mb-3 sm:mb-4 text-lead-dark">Выберите размер бокса:</h2>
-                          <div className="flex flex-col sm:flex-row items-start sm:items-center space-x-0 sm:space-x-6 space-y-3 sm:space-y-0">
-                            <div className='flex flex-row space-x-6'>
-                                <label className='font-exo font-light text-lead-dark'>
-                                  <input type="radio" name="boxSize" value="Бокс 40ft" className="mr-3 text-lead-dark" onChange={handleChange}/>
-                                  Бокс 40ft
-                                </label>
-                                <label className='font-exo font-light text-lead-dark'>
-                                  <input type="radio" name="boxSize" value="Бокс 20ft" className="mr-3 text-lead-dark" onChange={handleChange}/>
-                                  Бокс 20ft
-                                </label>
-                            </div>
-                            <div className='flex flex-row space-x-6'>
-                                <label className='font-exo font-light text-lead-dark'>
-                                  <input type="radio" name="boxSize" value="10ft" className="mr-3 text-lead-dark" onChange={handleChange}/>
-                                  Бокс 10ft
-                                </label>
-                                <label className='font-exo font-light text-lead-dark'>
-                                  <input type="radio" name="boxSize" value="5ft" className="mr-3 text-lead-dark" onChange={handleChange}/>
-                                  Бокс 5ft
-                                </label>
-                            </div>
-                          </div>
+                          <h2 className="text-xl font-exo font-medium mb-3 sm:mb-3 text-lead">Получить консультацию:</h2>
                         </div>
                         <div className='flex flex-col sm:flex-row justify-between items-center gap-1 sm:gap-3'>
                             <div className='flex flex-row space-x-3 w-full sm:w-2/3'>
                             <div className="mb-3 sm:mb-6">
-                                <label htmlFor="name" className="block text-lg font-exo font-light mb-1">Имя:</label>
+                                <label htmlFor="name" className="block text-lg font-exo text-lead mb-1">Имя:</label>
                                 <input type="text" id="name" name="name" className="w-full border-gray-200 rounded-xl px-3 py-4" placeholder='Ваше имя' onChange={handleChange} />
                             </div>
                             <div className="mb-3 sm:mb-6">
-                                <label htmlFor="phone" className="block text-lg font-exo font-light mb-1">Телефон:</label>
+                                <label htmlFor="phone" className="block text-lg font-exo text-lead mb-1">Телефон:</label>
                                 <input type="text" id="phone" name="phone" className="w-full border-gray-200 rounded-xl px-3 py-4" placeholder='Ваш телефон' onChange={handleChange} />
                             </div>
                             </div>
-                            <button className='w-full sm:w-1/3 rounded-xl py-4 px-4 mt-1 border-[0.5px] border-btnsec flex flex-row items-center justify-center bg-bluegen text-lead font-exo tracking-[0.5] text-base' type="submit">Арендовать</button>
+                            <button className='w-full sm:w-1/3 rounded-xl py-4 px-4 mt-1 border-[0.5px] border-none flex flex-row items-center justify-center bg-bluegen text-lead font-exo tracking-[0.5] text-base' type="submit">Отправить</button>
                         </div>
                     </form>
 
@@ -167,57 +150,20 @@ export function ShinyPage() {
             variants={animateInView}
             transition={{ duration: 0.8 }}
         >
-            <div className='container flex flex-col gap-6 sm:gap-4 rounded-[20px] px-5 sm:p-10 py-10 sm:py-0 sm:flex-row items-start sm:items-center sm:justify-between relative'>
-                <motion.div 
-                    className='w-[100%] sm:w-[30%] h-[200px] justify-between bg-bluegen rounded-xl p-6 flex flex-col items-start shadow-md shadow-my-shad'
-                    variants={miniInDownMoving}
-                    transition={{ duration: 0.5 }}
+            <div className='container flex flex-col gap-6 sm:gap-4 rounded-[20px] sm:p-10 py-10 sm:py-0 items-start sm:items-center sm:justify-between relative'>
+                <h2
+                    className='sm:w-[100%] w-[100%] font-exo text-2xl font-semibold sm:text-4/5xl leading-[2.4rem] sm:leading-[1.3em] text-lead-dark text-center sm:text-left my-6 sm:mt-10 mb-5'
                 >
-                    <h2
-                        className='w-[80%] font-mont font-medium text-2xl sm:text-2/5xl leading-snug text-lead text-left'
-                    >
-                        Аренда бокса онлайн
-                    </h2>
-                    <p 
-                        className='wfull sm:w-full text-lead tracking-[1px] font-exo text-lg sm:text-lg font-extralight leading-normal text-left mt-4'
-                    >
-                        Подробнее
-                    </p>
-                    <div className='w-[160px] h-[160px] bg-white opacity-10 absolute -top-10 -left-4 rounded-full'></div>
-                </motion.div>
-
-                <motion.div 
-                    className='w-[100%] sm:w-[30%] h-[200px] justify-between rounded-xl p-6 flex flex-col items-start shadow-md shadow-my-shad relative'
-                    variants={miniInDownMoving}
-                    transition={{ duration: 0.5 }}
-                >
-                    <h2 className='w-[80%] font-mont font-medium text-2xl sm:text-2/5xl leading-snug text-lead-dark text-left'>
-                        Охраняемая территория
-                    </h2>
-                    <div className='w-full flex flex-row justify-end'>
-                        <img src='./assets/svg/secure.svg' className='align-right absolute bottom-[1rem] right-[1.2rem] w-[80px] sm:w-[100px]'></img>
-                    </div>
-                </motion.div>
-
-                <motion.div 
-                    className='w-[100%] sm:w-[40%] h-[200px] justify-between rounded-xl p-6 flex flex-col items-start shadow-md shadow-my-shad relative'
-                    variants={miniInDownMoving}
-                    transition={{ duration: 0.5 }}
-                >
-                    <h2 className='w-[80%] font-mont font-medium text-2xl sm:text-2/5xl leading-snug text-lead-dark text-left'>
-                        Большое количество под любые нужды
-                    </h2>
-                    <div className='w-full flex flex-row justify-end'>
-                        <img src='./assets/svg/box3.svg' className='align-right absolute bottom-[1rem] right-[1.2rem] w-[80px] sm:w-[100px]'></img>
-                    </div>
-                </motion.div>
-
+                    Расчет стоимости хранения
+                </h2>
+                
+                <WheelForm/>
             </div>
         </motion.div>
 
         {/*Секция третья*/}
         <motion.div 
-            className='section px-3 flex flex-col items-center justify-center py-12'
+            className='section px-3 flex flex-col items-center justify-center py-12 xs:py-4 shiny-line'
             initial="hidden"
             whileInView="visible"
             viewport={{once: true}}
@@ -225,171 +171,66 @@ export function ShinyPage() {
             transition={{ duration: 0.8 }}
             id='catalog'
         >
-            <div className='container flex flex-col relative sect-line bg-left bg-no-repeat bg-contain'>
+            <div className='container flex flex-col sm:p-10 py-0 sm:py-0 relative bg-left bg-no-repeat bg-contain'>
                 <motion.h2
-                    className='sm:w-[100%] w-[100%] font-exo text-3xl font-semibold sm:text-4/5xl leading-[2.4rem] sm:leading-[1.3em] text-lead-dark text-center my-6 sm:my-10'
+                    className='sm:w-[100%] w-[100%] font-exo text-3xl font-semibold sm:text-4/5xl leading-[2.4rem] sm:leading-[1.3em] text-lead-dark text-left my-6 sm:mt-10 sm:tb-0'
                     variants={miniInDownMoving}
                     transition={{ duration: 0.5 }}
                 >
-                    Каталог боксов
+                    Хранение шин в SkladBox
                 </motion.h2>
                 
-                <div className='flex flex-col gap-8 rounded-[20px] px-5 sm:p-10 py-10 sm:py-0 sm:flex-row items-start sm:items-center sm:justify-between'>
-                    <motion.div 
-                        className='w-[100%] sm:w-1/2 justify-between bg-white rounded-xl p-6 flex flex-col items-start shadow-md shadow-my-shad z-10'
-                        variants={miniInDownMoving}
-                        transition={{ duration: 0.5 }}
-                    >
-                        <h2 className='w-full sm:w-[80%] font-mont font-medium text-2xl sm:text-2/5xl leading-snug text-lead-dark text-left'>
-                            Складской бокс 40ft
-                        </h2>
-                        <div className='flex flex-col sm:flex-row gap-2 mt-5'>
-                            <div className='flex flex-col gap-1 py-2 px-2 rounded-md bg-neutral'>
-                                <p className='font-exo text-lead-dark opacity-70 font-light text-sm'>Размеры:</p>
-                                <p className='font-exo text-lead-dark opacity-70 font-light text-[13px] sm:text-sm'>Длина 12м X Ширина 2.4м Х Высота 2,7м</p>
+                <div className='w-full flex flex-col items-center relative sm:p-0 sm:pt-10'>
+                    <p className='text-lead-dark-600 tracking-[1px] sm:text-left font-exo text-base sm:text-lg font-light leading-normal mt-6 mb-11'>
+                        Шины — специфическая товарная категория, требующая соблюдения регламентированных условий в период сезонного хранения. В компании skladbox шины хранятся с соблюдением всех необходимых условий для поддержния изначального состояния. Соблюдение необхдимых условий хранения исключает возможность появления коррозии и деформации.
+                    </p>
+                    <div className='flex flex-row xs:flex-col justify-between gap-4 mb-6'>
+                        <div className='flex flex-row justify-between gap-4'>  
+                            <div className='flex flex-row w-1/2 items-center'>
+                                <img src='./assets/svg/temp.svg' className='w-[28%] mr-2'></img>
+                                <p className='text-lead-dark-600 tracking-[1px] sm:text-left font-exo text-base sm:text-lg font-normal leading-normal mt-6 mb-6'>
+                                    Поддержка оптимальной температуры
+                                </p>
                             </div>
-                            <div className='flex flex-row gap-2'>
-                                <div className='flex flex-col gap-1 py-2 px-4 rounded-md bg-neutral'>
-                                    <p className='font-exo text-lead-dark opacity-70 font-light text-sm'>Площадь:</p>
-                                    <p className='font-exo text-lead-dark opacity-70 font-light text-[13px] sm:text-sm'>30м²</p>
-                                </div>
-                                <div className='flex flex-col gap-1 py-2 px-4 rounded-md bg-neutral'>
-                                    <p className='font-exo text-lead-dark opacity-70 font-light text-sm'>Объем:</p>
-                                    <p className='font-exo text-lead-dark opacity-70 font-light text-[13px] sm:text-sm'>76м³</p>
-                                </div>
+                            <div className='flex flex-row w-1/2 items-center'>
+                                <img src='./assets/svg/water.svg' className='w-[26%] mr-2'></img>
+                                <p className='text-lead-dark-600 tracking-[1px] sm:text-left font-exo text-base sm:text-lg font-normal leading-normal mt-6 mb-6'>
+                                    Влажность на уровне 50-80%
+                                </p>
                             </div>
                         </div>
-                        <img src='./assets/img/saas-3/cont20ft.png' className='-my-16'></img>
-                        <a href='#cont' className='wfull sm:w-full text-lead-dark opacity-40 tracking-[1px] font-exo text-lg sm:text-xl font-normal leading-normal text-left mt-6'>
-                            Подробнее
-                        </a>
-                    </motion.div>
-
-                    <div className='flex flex-col justify-between gap-6 sm:w-1/2'>
-                        <motion.div 
-                            className='w-full h-auto sm:h-[260px] sm:h-[230px] justify-start bg-white rounded-xl p-6 flex flex-col items-start shadow-md shadow-my-shad z-10 relative overflow-hidden'
-                            variants={miniInDownMoving}
-                            transition={{ duration: 0.5 }}
-                        >
-                            <h2 className='w-full sm:w-[80%] font-mont font-medium text-2xl sm:text-2/5xl leading-snug text-lead-dark text-left'>
-                                Складской бокс 20ft
-                            </h2>
-                            <div className='flex flex-col sm:flex-row gap-2 mt-20 sm:mt-5 z-10'>
-                                <div className='flex flex-col gap-1 py-2 px-4 rounded-md bg-neutral'>
-                                    <p className='font-exo text-lead-dark opacity-70 font-light text-sm'>Размеры:</p>
-                                    <p className='font-exo text-lead-dark opacity-70 font-light text-[13px] sm:text-sm'>Д 6м х Ш 2,4м x В 2,3м</p>
-                                </div>
-                                <div className='flex flex-row gap-2'>
-                                    <div className='flex flex-col gap-1 py-2 px-4 rounded-md bg-neutral'>
-                                        <p className='font-exo text-lead-dark opacity-70 font-light text-sm'>Площадь:</p>
-                                        <p className='font-exo text-lead-dark opacity-70 font-light text-[13px] sm:text-sm'>15м²</p>
-                                    </div>
-                                    <div className='flex flex-col gap-1 py-2 px-4 rounded-md bg-neutral'>
-                                        <p className='font-exo text-lead-dark opacity-70 font-light text-sm'>Объем:</p>
-                                        <p className='font-exo text-lead-dark opacity-70 font-light text-[13px] sm:text-sm'>34м³</p>
-                                    </div>
-                                </div>
+                        <div className='flex flex-row justify-between gap-4'>
+                            <div className='flex flex-row w-1/2 items-center'>
+                                <img src='./assets/svg/fun.svg' className='w-[28%] mr-2'></img>
+                                <p className='text-lead-dark-600 tracking-[1px] sm:text-left font-exo text-base sm:text-lg font-normal leading-normal mt-6 mb-6'>
+                                    Наличие вентиляции в боксах
+                                </p>
                             </div>
-                            <img src='./assets/img/saas-3/cont10ft.png' className='sm:w-[240px] w-[220px] absolute top-0 right-0'></img>
-                        </motion.div>
-
-                        <div className='flex flex-col sm:flex-row gap-4'>
-                            <motion.div 
-                                className='w-full h-[240px] justify-between bg-white rounded-xl p-6 flex flex-col items-start shadow-md shadow-my-shad z-0 sm:z-0 relative overflow-hidden'
-                                variants={miniInDownMoving}
-                                transition={{ duration: 0.5 }}
-                            >
-                                <h2 className='w-[80%] font-mont font-medium text-2xl sm:text-2/5xl leading-snug text-lead-dark text-left'>
-                                    Бокс 10ft
-                                </h2>
-                                <img src='./assets/img/saas-3/cont10ft.png' className='sm:w-[240px] w-[220px] absolute top-0 -right-6'></img>
-                                <div className='flex flex-row sm:flex-col gap-3 items-end'>
-                                    <div className='flex flex-col gap-3'>
-                                        <div className='flex flex-col gap-1 py-2 px-4 rounded-md bg-neutral'>
-                                            <p className='font-exo text-lead-dark opacity-70 font-light text-[13px] sm:text-sm'>7.5 м²</p>
-                                        </div>
-                                        <div className='flex flex-col gap-1 py-2 px-4 rounded-md bg-neutral'>
-                                            <p className='font-exo text-lead-dark opacity-70 font-light text-[13px] sm:text-sm'>19м³</p>
-                                        </div>
-                                    </div>
-                                    <div className='flex flex-col gap-1 py-2 px-4 rounded-md bg-neutral'>
-                                        <p className='font-exo text-lead-dark opacity-70 font-light text-[13px] sm:text-sm'>Д 3м х Ш 2,4м x В 2,6м</p>
-                                    </div>
-                                </div>
-                            </motion.div>
-                            <motion.div 
-                                className='w-full h-[240px] justify-between bg-white rounded-xl p-6 flex flex-col items-start shadow-md shadow-my-shad relative overflow-hidden'
-                                variants={miniInDownMoving}
-                                transition={{ duration: 0.5 }}
-                            >
-                                <h2 className='w-[80%] font-mont font-medium text-2xl sm:text-2/5xl leading-snug text-lead-dark text-left'>
-                                    Бокс 5ft
-                                </h2>
-                                <img src='./assets/img/saas-3/cont10ft.png' className='sm:w-[240px] w-[220px] absolute top-0 -right-6 z-0 sm:z-10'></img>
-                                <div className='flex flex-row sm:flex-col gap-3 items-end z-10 sm:z-0'>
-                                    <div className='flex flex-col gap-3'>
-                                        <div className='flex flex-col gap-1 py-2 px-4 rounded-md bg-neutral'>
-                                            <p className='font-exo text-lead-dark opacity-70 font-light text-[13px] sm:text-sm'>1,5м²</p>
-                                        </div>
-                                        <div className='flex flex-col gap-1 py-2 px-4 rounded-md bg-neutral'>
-                                            <p className='font-exo text-lead-dark opacity-70 font-light text-[13px] sm:text-sm'>2,8м³</p>
-                                        </div>
-                                    </div>
-                                    <div className='flex flex-col gap-1 py-2 px-4 rounded-md bg-neutral'>
-                                        <p className='font-exo text-lead-dark opacity-70 font-light text-[13px] sm:text-sm'>Д 1,5м х Ш 1,5м x В 1,5м</p>
-                                    </div>
-                                </div>
-                            </motion.div>
+                            <div className='flex flex-row w-1/2 items-center'>
+                                <img src='./assets/svg/sun.svg' className='w-[28%] mr-2'></img>
+                                <p className='text-lead-dark-600 tracking-[1px] sm:text-left font-exo text-base sm:text-lg font-normal leading-normal mt-6 mb-6'>
+                                    Защита от солнечных лучшей
+                                </p>
+                            </div>
                         </div>
+                    </div>
+                    <p className='text-lead-dark-600 tracking-[1px] sm:text-left font-exo text-base sm:text-lg font-light leading-normal mt-6 mb-6'>
+                        Сотрудники компании периодически проводят осмотр всех хранящихся покрышек и их своевременное переворачиваение. Это позволяет устранить возможность образования каких-либо деформаций. 
+                    </p>
 
-                        <a href='#cont' className='px-6 py-4 bg-bluegen text-lead rounded-xl font-exo text-lg flex flex-row items-center justify-center gap-4 transition-transform transform group'>Узнать подробнее<img src='./assets/svg/arrow.svg' className='transition-transform transform duration-300 group-hover:translate-x-3'/></a>
+                    <div className='bg-[#f2f5fc] flex flex-col sm:flex-row rounded-xl justify-between items-center xs:items-start p-8 gap-10 mt-5'>
+                        <span className="advice__title te">Важно</span>
+                        <p className='text-lead-dark-600 tracking-[1px] sm:text-left font-exo text-base sm:text-lg font-light leading-normal mt-6 xs:mt-0 mb-6'>
+                            Резина во время хранения выделяет ядовитый фенол и характерный запах. При нагреве становится мягче, а при охлаждении твердеет. В таких условиях за сезон колесо может фатально изменить форму
+                        </p>
                     </div>
                 </div>
-            </div>
-
-            <div id='rent' className='container flex flex-col items-center relative mt-20 p-5 sm:p-10'>
-                <h2 className='font-exo text-lead-dark font-semibold text-3xl sm:text-4/5xl leading-[1.3em] mt-0 sm:mt-10 text-center'>Как арендовать бокс?</h2>
-
-                <motion.div
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{once: true}}
-                    className='w-[100%] sm:w-auto'
-                >
-                    <div className='steps py-5 mt-4'>
-                        <motion.div 
-                            variants={inDownMoving} 
-                            className='step-item py-3 relative'
-                            transition={{ duration: 0.8 }}
-                        >
-                            <span className='step-item-num font-exo text-3xl font-semibold m-auto sm:m-0'>1</span>
-                            <p className='text-lead-dark-dark tracking-[1px] font-exo text-base w-full sm:text-xl font-light leading-normal absolute left-[75px] sm:left-[130px] top-[100px] sm:top-[16px] sm:w-[400px] w-[260px] sm:text-left text-center xs:left-1/2 xs:transform xs:-translate-x-1/2'>После ознакомления с боксами и их характеристиками, оставьте заявку на сайте с выбором конкретного контейнера или без, или свяжитесь с нами удобным способом</p>
-                        </motion.div>
-                        <motion.div 
-                            variants={inDownMoving} 
-                            className='step-item xs:py-40 xs:mt-2 py-20 relative'
-                            transition={{ duration: 1.4 }}
-                        >
-                            <span className='step-item-num font-exo text-3xl font-semibold m-auto sm:m-0'>2</span>
-                            <p className='text-left sm:text-right text-lead-dark-dark tracking-[1px] font-exo text-base w-full sm:text-xl font-light leading-normal absolute left-step2 sm:right-[130px] top-[250px] sm:top-[66px] sm:w-[400px] w-[260px] sm:text-left text-center xs:left-1/2 xs:transform xs:-translate-x-1/2'>Мы проконсультируем вас, заключим договор аренды на указанное количество месяцев и вы произведете оплату</p>
-                        </motion.div>
-                        <motion.div 
-                            variants={inDownMoving} 
-                            className='step-item py-3 relative'
-                            transition={{ duration: 2 }}
-                        >
-                            <span className='step-item-num font-exo text-3xl font-semibold m-auto sm:m-0'>3</span>
-                            <p className='text-lead-dark-dark tracking-[1px] font-exo text-base w-full sm:text-xl font-light leading-normal absolute left-[75px] sm:left-[130px] top-[100px] sm:top-[30px] sm:w-[400px] w-[260px] sm:text-left text-center xs:left-1/2 xs:transform xs:-translate-x-1/2'>Далее вы можете пользоваться боксами в своих целях</p>
-                        </motion.div>
-                    </div>
-                </motion.div>
             </div>
 
         </motion.div>
 
         <motion.div 
-            className='section h-auto sm:h-[700px] flex justify-center py-3 bg-bluegen bg-right-bottom bg-[length:56%] xs:bg-[length:80%] bg-no-repeat'
-            style={{ backgroundImage: `url(./assets/img/saas-3/second.png)` }}
+            className='section h-auto flex justify-center py-3 '
             initial="hidden"
             whileInView="visible"
             viewport={{once: true}}
@@ -397,48 +238,51 @@ export function ShinyPage() {
             transition={{ duration: 0.8 }}
         >
             <div 
-                className='container flex flex-col w-[100%] rounded-[20px] p-5 sm:p-10 py-10 sm:py-0 sm:flex-row items-start sm:items-center relative'
+                className='container bg-bluegen flex flex-col w-[100%] rounded-[20px] p-5 sm:p-10 py-10 sm:py-10 sm:flex-row items-start sm:items-center relative bg-right-bottom bg-[length:68%] xs:bg-[length:80%] bg-no-repeat'
+                style={{ backgroundImage: `url(./assets/img/saas-3/second-shiny.png)` }}
             >
-                <div className='w-[100%] sm:w-[70%] flex flex-col justify-center'>
+                <div className='w-[100%] sm:w-[55%] flex flex-col justify-center'>
                     <motion.h1
                         className='sm:w-[100%] w-[100%] font-exo text-3xl font-semibold sm:text-4/5xl leading-[2.4rem] sm:leading-[1.3em] text-lead'
                         variants={miniInDownMoving}
                         transition={{ duration: 0.5 }}
                     >
-                        Для чего арендуют складские боксы?
+                        Как мы работаем?
                     </motion.h1>
                     <motion.p 
-                        className='w-[100%] sm:w-[80%] text-lead tracking-[1px] font-exo text-lg sm:text-xl font-extralight leading-normal mt-4'
+                        className='w-[100%] sm:w-[90%] text-lead tracking-[1px] font-exo text-lg sm:text-xl font-extralight leading-normal mt-4'
                         variants={miniInDownMoving} 
                         transition={{ duration: 0.7 }}
                     >
-                        Мы предлагаем боксы для использования в бизнес целях, а так же для физ. лиц под бытовые задачи!
+                        Процедура хранения в skladbox максимально простая и удобная
                     </motion.p>
 
-                    <div className='flex flex-row gap-4 w-full my-11'>
-                        <div className='flex flex-col w-1/2 sm:w-1/3'>
-                            <p className='font-exo text-2xl text-white mb-3'>Для бизнеса</p>
-                            <div className='flex flex-row mb-1 items-center'>
-                                <img src='./assets/svg/item.svg' width={20}/><p className='font-exo text-base sm:text-xl ps-2 text-lead font-extralight'>Хранение товаров</p>
+                    <div className='flex flex-col sm:flex-row gap-4 w-full my-11'>
+                        <div className='flex felex-row gap-4 w-full sm:w-[66%]'>
+                            <div className='flex flex-col w-1/2 sm:w-1/2'>
+                                <p className='font-exo text-xl text-white mb-3'>ШАГ 1</p>
+                                <p 
+                                    className='w-[100%] text-lead tracking-[1px] font-exo text-[13px] sm:text-base font-extralight leading-normal mb-3'
+                                >
+                                    Приезжаете на территорию хранения skladbox
+                                </p>
                             </div>
-                            <div className='flex flex-row mb-1 items-center'>
-                                <img src='./assets/svg/item.svg' width={20}/><p className='font-exo text-base sm:text-xl ps-2 text-lead font-extralight'>Сезонное хранение</p>
-                            </div>
-                            <div className='flex flex-row mb-1 items-center'>
-                                <img src='./assets/svg/item.svg' width={20}/><p className='font-exo text-base sm:text-xl ps-2 text-lead font-extralight'>Хранение вещей и мебели</p>
+                            <div className='flex flex-col w-1/2 sm:w-1/2'>
+                                <p className='font-exo text-xl text-white mb-3'>ШАГ 2</p>
+                                <p 
+                                    className='w-[100%] text-lead tracking-[1px] font-exo text-[13px] sm:text-base font-extralight leading-normal mb-3'
+                                >
+                                    Заключаете договор хранения. Процедура занимает не более 20 мин.
+                                </p>
                             </div>
                         </div>
                         <div className='flex flex-col w-1/2 sm:w-1/3'>
-                            <p className='font-exo text-2xl text-white mb-3'>Для дома</p>
-                            <div className='flex flex-row mb-1 items-center'>
-                                <img src='./assets/svg/item.svg' width={20}/><p className='font-exo text-base sm:text-xl ps-2 text-lead font-extralight'>Хранение шин</p>
-                            </div>
-                            <div className='flex flex-row mb-1 items-center'>
-                                <img src='./assets/svg/item.svg' width={20}/><p className='font-exo text-base sm:text-xl ps-2 text-lead font-extralight'>Сезонное хранение</p>
-                            </div>
-                            <div className='flex flex-row mb-1 items-center'>
-                                <img src='./assets/svg/item.svg' width={20}/><p className='font-exo text-base sm:text-xl ps-2 text-lead font-extralight'>Хранение мото транспорта</p>
-                            </div>
+                            <p className='font-exo text-xl text-white mb-3'>ШАГ 3</p>
+                            <p 
+                                className='w-[100%] text-lead tracking-[1px] font-exo text-[13px] sm:text-base font-extralight leading-normal mb-3'
+                            >
+                                Маркируем ваши колеса и храним на специальном складе.
+                            </p>
                         </div>
                     </div>
 
@@ -447,16 +291,22 @@ export function ShinyPage() {
                         variants={miniInDownMoving} 
                         transition={{ duration: 0.7 }}
                     >
-                        Заполните форму, если Вам нужна консультация специалиста!
+                        Остались вопросы?
                     </motion.p>
-                    {/* <p className='w-[80%] font-exo text-2xl font text-white mb-4'>Заполните форму, если Вам нужна консультация специалиста</p> */}
+                    <motion.p 
+                        className='w-[100%] sm:w-[70%] text-lead tracking-[1px] font-exo text-lg font-extralight leading-normal mb-4'
+                        variants={miniInDownMoving} 
+                        transition={{ duration: 0.7 }}
+                    >
+                        Заполните форму и с вами свяжется менеджер в течении 15 мин.
+                    </motion.p>
                     <motion.div
                         className='flex flex-row justify-between'
                         variants={miniInDownMoving}
                         transition={{ duration: 0.9 }}
                     >
                     
-                    <form onSubmit={handleSubmitconsult}  className="w-full sm:w-2/3">
+                    <form onSubmit={handleSubmitconsult}  className="w-full sm:w-[80%]">
                         <div className='flex flex-col justify-between gap-2 pb-20 sm:pb-0'>
                             <div className='flex sm:flex-row gap-4 w-full'>
                                 <div className="mb-6 w-full">
@@ -473,54 +323,6 @@ export function ShinyPage() {
                 </div>
             </div>
         </motion.div>
-
-        {/* Секция аренда */}
-        <div 
-            className='section px-3 flex justify-center bg-center bg-cover py-20'
-        >
-            <div 
-                className='container flex flex-col items-center px-3 sm:px-10'
-                id='cont'
-            >
-                <h2 className='font-exo text-lead-dark font-semibold text-3xl sm:text-4/5xl'>Онлайн аренда бокса</h2>
-                <p className='text-lead-dark-600 tracking-[1px] sm:w-[90%] sm:text-center font-exo text-lg font-extralight leading-normal mt-6 mb-11'>Выберите интересующий Вас бокс</p>
-                <ContainerBox />
-
-                <div className='container w-full flex flex-col items-center relative mt-20 sm:p-0 sm:pt-10'>
-                    <h4 className='w-full font-exo text-lead-dark font-semibold text-left text-3xl sm:text-2xl mt-10 mb-2'>Аренда складского помещения в Лыткарино</h4>
-                    <p className='text-lead-dark-600 tracking-[1px] sm:text-left font-exo text-base sm:text-lg font-light leading-normal mt-6 mb-11'>
-                        Наша компания предоставляет в аренду складские боксы. Наши складские боксы отличаются от традиционных решений тем, что для их использования не требуется открывать никаких счетов. Вы можете арендовать боксы определенного размера и использовать их для хранения различных товаров и материалов. Кроме того, мы предлагаем гибкие условия аренды и возможность адаптировать пространство под ваши индивидуальные потребности. Наши складские боксы обеспечивают надежную и безопасную защиту вашего имущества, позволяя вам хранить ваши вещи в удобном и доступном месте.
-                    </p>
-                    <h4 className='w-full font-exo text-lead-dark font-semibold text-left text-3xl sm:text-2xl mt-2 mb-2'>Что можно хранить в боксах?</h4>
-                    <p className='text-lead-dark-600 tracking-[1px] sm:text-left font-exo text-base sm:text-lg font-light leading-normal mt-6 mb-6'>
-                        Кроме того, мы предлагаем гибкие условия аренды и возможность адаптировать пространство под ваши индивидуальные потребности. 
-                    </p>
-                            <ul className='list-disc text-lead-dark-600 tracking-[1px] sm:text-left font-exo text-base sm:text-lg font-light leading-normal ml-2'>
-                                <Link to='/shiny' className='mb-2'><span className='font-semibold'>Хранение шин</span>- Место хранения шин зачастую является непростой задачей для многих владельцев авто, именно под такую цель можно арендовать боксы в SkladBox.</Link>
-                                <li className='mb-2'><span className='font-semibold'>Хранение товаров</span>- В боксах возможно хранине товаров определенной спецификации. Для уточнения информации свяжитесьс нами удобным способом.</li>
-                                <li className='mb-2'><span className='font-semibold'>Хранение мото транспорта</span>- Так же боксы могут заменить гараж для хранения мотоцикла или другого мото транспорта.</li>
-                            </ul> 
-                </div>
-            </div>
-        </div>
-        
-        {/* Секция 5 faq */}
-        {/* <div 
-            id='faq'
-            className='section px-5 flex justify-center bg-center bg-cover pt-14'
-        >
-            <div className='container flex flex-col items-center'>
-                <h2 className='font-exo text-lead-dark font-semibold text-3xl sm:text-4xl mb-10'>Ответы на популярные вопросы</h2>
-                <div className='w-[100%] flex justify-center py-5'>
-                    
-                    <Accordion 
-                        items={accordionItems} 
-                    />
-
-                </div>
-                
-            </div>
-        </div> */}
 
         {/* Секция 6 карта */}
         <div 

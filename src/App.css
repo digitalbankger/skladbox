@@ -256,8 +256,45 @@ nav {
   background-image: url(../public/assets/svg/paral.svg);
   background-repeat: no-repeat;
   background-size: contain;
-  opacity: 0.2;
+  opacity: 0.1;
   z-index: 0;
+}
+
+.shiny-line {
+  position: relative;
+}
+.shiny-line::before {
+  content: '';
+  position: absolute;
+  top: 200px;
+  left: 0;
+  width: 80%;
+  height: 28%;
+  background-image: url(../public/assets/svg/paral.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0.1;
+  z-index: 0;
+}
+
+.advice__title {
+  padding-left: 30px;
+  position: relative;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  color: #000000;
+}
+
+.advice__title::before {
+  content: "";
+  background-image: url(../public/assets/svg/advice.svg);
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0%;
+  width: 20px;
+  height: 20px;
 }
 
 .foot-line {

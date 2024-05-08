@@ -23,7 +23,6 @@ module.exports = {
         'lead-dark': '#252F43',
         'bluegen': "#3579F4",
         'dark-lead': '#5b6882',
-        'dark-lead': '#5b6882'
       },
       backgroundImage: {
         'grad': 'linear-gradient(220deg, #015c3b 0%, #112c1d 100%)',
