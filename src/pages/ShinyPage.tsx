@@ -87,14 +87,14 @@ export function ShinyPage() {
             >
                 <div className='w-[100%] sm:w-[40%]'>
                     <motion.h1
-                        className='sm:w-[100%] w-[100%] font-exo text-3xl font-semibold uppercase sm:text-4/5xl leading-[2.4rem] sm:leading-[1.3em] text-lead'
+                        className='sm:w-[100%] w-[100%] font-exo text-[1.7rem] font-semibold uppercase sm:text-4/5xl leading-[2.4rem] sm:leading-[1.3em] text-lead'
                         variants={miniInDownMoving}
                         transition={{ duration: 0.5 }}
                     >
                         Услуги безопасного хранения авто шин
                     </motion.h1>
                     <motion.p 
-                        className='w-[100%] sm:w-[90%] text-lead tracking-[1px] font-exo text-base sm:text-xl font-extralight leading-normal mt-4 mb-11'
+                        className='w-[100%] sm:w-[90%] text-lead tracking-[1px] font-exo text-[14px] sm:text-xl font-extralight leading-normal mt-4 mb-11'
                         variants={miniInDownMoving}
                         transition={{ duration: 0.7 }}
                     >
@@ -173,7 +173,7 @@ export function ShinyPage() {
         >
             <div className='container flex flex-col sm:p-10 py-0 sm:py-0 relative bg-left bg-no-repeat bg-contain'>
                 <motion.h2
-                    className='sm:w-[100%] w-[100%] font-exo text-3xl font-semibold sm:text-4/5xl leading-[2.4rem] sm:leading-[1.3em] text-lead-dark text-left my-6 sm:mt-10 sm:tb-0'
+                    className='sm:w-[100%] w-[100%] font-exo text-[1.6rem] font-semibold sm:text-4/5xl leading-[2.4rem] sm:leading-[1.3em] text-lead-dark text-left mt-6 mb-2 sm:mb-6 sm:mt-10 sm:tb-0'
                     variants={miniInDownMoving}
                     transition={{ duration: 0.5 }}
                 >
@@ -187,7 +187,7 @@ export function ShinyPage() {
                     <div className='flex flex-row xs:flex-col justify-between gap-4 mb-6'>
                         <div className='flex flex-row justify-between gap-4'>  
                             <div className='flex flex-row w-1/2 items-center'>
-                                <img src='./assets/svg/temp.svg' className='w-[28%] mr-2'></img>
+                                <img src='./assets/svg/temp.svg' className='w-[24%] sm:w-[28%] mr-2'></img>
                                 <p className='text-lead-dark-600 tracking-[1px] sm:text-left font-exo text-base sm:text-lg font-normal leading-normal mt-6 mb-6'>
                                     Поддержка оптимальной температуры
                                 </p>
@@ -201,13 +201,13 @@ export function ShinyPage() {
                         </div>
                         <div className='flex flex-row justify-between gap-4'>
                             <div className='flex flex-row w-1/2 items-center'>
-                                <img src='./assets/svg/fun.svg' className='w-[28%] mr-2'></img>
+                                <img src='./assets/svg/fun.svg' className='w-[24%] sm:w-[28%] mr-2'></img>
                                 <p className='text-lead-dark-600 tracking-[1px] sm:text-left font-exo text-base sm:text-lg font-normal leading-normal mt-6 mb-6'>
                                     Наличие вентиляции в боксах
                                 </p>
                             </div>
                             <div className='flex flex-row w-1/2 items-center'>
-                                <img src='./assets/svg/sun.svg' className='w-[28%] mr-2'></img>
+                                <img src='./assets/svg/sun.svg' className='w-[24%] sm:w-[28%] mr-2'></img>
                                 <p className='text-lead-dark-600 tracking-[1px] sm:text-left font-exo text-base sm:text-lg font-normal leading-normal mt-6 mb-6'>
                                     Защита от солнечных лучшей
                                 </p>
@@ -238,7 +238,7 @@ export function ShinyPage() {
             transition={{ duration: 0.8 }}
         >
             <div 
-                className='container bg-bluegen flex flex-col w-[100%] rounded-[20px] p-5 sm:p-10 py-10 sm:py-10 sm:flex-row items-start sm:items-center relative bg-right-bottom bg-[length:68%] xs:bg-[length:80%] bg-no-repeat'
+                className='container bg-bluegen flex flex-col w-[100%] rounded-[20px] p-5 sm:p-10 py-10 sm:py-10 sm:flex-row items-start sm:items-center relative bg-right-bottom bg-[length:68%] xs:bg-[length:100%] bg-no-repeat'
                 style={{ backgroundImage: `url(./assets/img/saas-3/second-shiny.png)` }}
             >
                 <div className='w-[100%] sm:w-[55%] flex flex-col justify-center'>
@@ -306,7 +306,7 @@ export function ShinyPage() {
                         transition={{ duration: 0.9 }}
                     >
                     
-                    <form onSubmit={handleSubmitconsult}  className="w-full sm:w-[80%]">
+                    <form onSubmit={handleSubmitconsult}  className="w-full sm:w-[80%] xs:mb-5">
                         <div className='flex flex-col justify-between gap-2 pb-20 sm:pb-0'>
                             <div className='flex sm:flex-row gap-4 w-full'>
                                 <div className="mb-6 w-full">
