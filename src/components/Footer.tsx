@@ -17,7 +17,7 @@ export function Footer() {
       { name: 'Контакты', href: '/#contact' },
     ],
     legal: [
-      { name: '+7 (897)-010-26-28', href: 'tel:+7 (897)-010-26-28' },
+      { name: '+7 (965)-384-53-85', href: 'tel:+7 (965)-384-53-85' },
       { name: 'info@skladbox.online', href: 'mailto:info@skladbox.online' },
     ],
     social: [

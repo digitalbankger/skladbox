@@ -345,9 +345,9 @@ export function ShinyPage() {
                         Наши контакты
                     </motion.h2>
                         <div className='flex  flex-col gap-1'>
-                            <a href='tel:+7 (897)-010-26-28'>
+                            <a href='tel:+7 (965)-384-53-85'>
                                 <p className='font-exo text-lead-dark font-extralight text-lg'>Телефон</p>
-                                <p className='font-exo text-lead-dark font-medium tracking-[0.4px] sm:text-xl'>+7 (897)-010-26-28</p>
+                                <p className='font-exo text-lead-dark font-medium tracking-[0.4px] sm:text-xl'>+7 (965)-384-53-85</p>
                             </a>
                         </div>
                         <div className='flex  flex-col gap-1'>

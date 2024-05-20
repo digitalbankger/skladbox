@@ -53,7 +53,7 @@ const WheelForm = () => {
       }
   
       // Умножаем цену на количество
-      cost += parseInt(wheel.quantity) * cost;
+      cost = parseInt(wheel.quantity) * cost;
   
       // Умножаем цену на выбранный срок хранения
       cost *= parseInt(wheel.duration);

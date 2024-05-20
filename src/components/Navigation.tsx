@@ -103,8 +103,8 @@ export function Navigation() {
 
                     <div className='hidden sm:flex flex-row pr-7'>
                         <img src="./assets/svg/tel.svg" width={25}/>
-                        <a href='tel:+7 (897)-010-26-28' className='flex flex-col items-end ms-2'>
-                            <p className='text-base font-exo font-normal text-lead-dark tracking-[0.8px]'>+7 (897)-010-26-28</p>
+                        <a href='tel:+7 (965)-384-53-85' className='flex flex-col items-end ms-2'>
+                            <p className='text-base font-exo font-normal text-lead-dark tracking-[0.8px]'>+7 (965)-384-53-85</p>
                             <p className='text-xs font-exo font-extralight text-lead-dark tracking-[0.4px]'>Позвонить по телефону</p>
                         </a>
                     </div>
@@ -190,8 +190,8 @@ export function Navigation() {
 
                               <div className='flex flex-row my-6'>
                                   <img src="./assets/svg/tel.svg" width={22}/>
-                                  <a href='tel:+7 (897)-010-26-28' className='flex flex-col items-end ms-2'>
-                                      <p className='text-base font-exo font-normal text-lead-dark tracking-[0.8px]'>+7 (897)-010-26-28</p>
+                                  <a href='tel:+7 (965)-384-53-85' className='flex flex-col items-end ms-2'>
+                                      <p className='text-base font-exo font-normal text-lead-dark tracking-[0.8px]'>+7 (965)-384-53-85</p>
                                       <p className='text-xs font-exo font-extralight text-lead-dark tracking-[0.4px]'>Позвонить по телефону</p>
                                   </a>
                               </div>

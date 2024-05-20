@@ -339,10 +339,9 @@ export function GeneralPage() {
                                 variants={miniInDownMoving}
                                 transition={{ duration: 0.5 }}
                             >
-                                <h2 className='w-[80%] font-mont font-medium text-2xl sm:text-2/5xl leading-snug text-lead-dark text-left'>
+                                <h2 className='w-full font-mont font-medium text-2xl sm:text-2/5xl leading-snug text-lead-dark text-left'>
                                     Бокс 10ft
                                 </h2>
-                                <img src='./assets/img/saas-3/cont10ft.png' className='sm:w-[240px] w-[220px] absolute top-0 -right-6'></img>
                                 <div className='flex flex-row sm:flex-col gap-3 items-end'>
                                     <div className='flex flex-col gap-3'>
                                         <div className='flex flex-col gap-1 py-2 px-4 rounded-md bg-neutral'>
@@ -357,26 +356,49 @@ export function GeneralPage() {
                                     </div>
                                 </div>
                             </motion.div>
+
                             <motion.div 
                                 className='w-full h-[240px] justify-between bg-white rounded-xl p-6 flex flex-col items-start shadow-md shadow-my-shad relative overflow-hidden'
                                 variants={miniInDownMoving}
                                 transition={{ duration: 0.5 }}
                             >
-                                <h2 className='w-[80%] font-mont font-medium text-2xl sm:text-2/5xl leading-snug text-lead-dark text-left'>
+                                <h2 className='w-full font-mont font-medium text-2xl sm:text-2/5xl leading-snug text-lead-dark text-left'>
                                     Бокс 5ft
                                 </h2>
-                                <img src='./assets/img/saas-3/cont10ft.png' className='sm:w-[240px] w-[220px] absolute top-0 -right-6 z-0 sm:z-10'></img>
                                 <div className='flex flex-row sm:flex-col gap-3 items-end z-10 sm:z-0'>
                                     <div className='flex flex-col gap-3'>
                                         <div className='flex flex-col gap-1 py-2 px-4 rounded-md bg-neutral'>
-                                            <p className='font-exo text-lead-dark opacity-70 font-light text-[13px] sm:text-sm'>1,5м²</p>
+                                            <p className='font-exo text-lead-dark opacity-70 font-light text-[13px] sm:text-sm'>5м²</p>
                                         </div>
                                         <div className='flex flex-col gap-1 py-2 px-4 rounded-md bg-neutral'>
-                                            <p className='font-exo text-lead-dark opacity-70 font-light text-[13px] sm:text-sm'>2,8м³</p>
+                                            <p className='font-exo text-lead-dark opacity-70 font-light text-[13px] sm:text-sm'>м³</p>
                                         </div>
                                     </div>
                                     <div className='flex flex-col gap-1 py-2 px-4 rounded-md bg-neutral'>
                                         <p className='font-exo text-lead-dark opacity-70 font-light text-[13px] sm:text-sm'>Д 1,5м х Ш 1,5м x В 1,5м</p>
+                                    </div>
+                                </div>
+                            </motion.div>
+
+                            <motion.div 
+                                className='w-full h-[240px] justify-between bg-white rounded-xl p-6 flex flex-col items-start shadow-md shadow-my-shad relative overflow-hidden'
+                                variants={miniInDownMoving}
+                                transition={{ duration: 0.5 }}
+                            >
+                                <h2 className='w-full font-mont font-medium text-2xl sm:text-2/5xl leading-snug text-lead-dark text-left'>
+                                    Бокс 3ft
+                                </h2>
+                                <div className='flex flex-row sm:flex-col gap-3 items-end z-10 sm:z-0'>
+                                    <div className='flex flex-col gap-3'>
+                                        <div className='flex flex-col gap-1 py-2 px-4 rounded-md bg-neutral'>
+                                            <p className='font-exo text-lead-dark opacity-70 font-light text-[13px] sm:text-sm'>3,5м²</p>
+                                        </div>
+                                        <div className='flex flex-col gap-1 py-2 px-4 rounded-md bg-neutral'>
+                                            <p className='font-exo text-lead-dark opacity-70 font-light text-[13px] sm:text-sm'>10м³</p>
+                                        </div>
+                                    </div>
+                                    <div className='flex flex-col gap-1 py-2 px-4 rounded-md bg-neutral'>
+                                        <p className='font-exo text-lead-dark opacity-70 font-light text-[13px] sm:text-sm'>Д 3,5м х Ш 2,6м x В 2,6м</p>
                                     </div>
                                 </div>
                             </motion.div>
@@ -583,9 +605,9 @@ export function GeneralPage() {
                         Наши контакты
                     </motion.h2>
                         <div className='flex  flex-col gap-1'>
-                            <a href='tel:+7 (897)-010-26-28'>
+                            <a href='tel:+7 (965)-384-53-85'>
                                 <p className='font-exo text-lead-dark font-extralight text-lg'>Телефон</p>
-                                <p className='font-exo text-lead-dark font-medium tracking-[0.4px] sm:text-xl'>+7 (897)-010-26-28</p>
+                                <p className='font-exo text-lead-dark font-medium tracking-[0.4px] sm:text-xl'>+7 (965)-384-53-85</p>
                             </a>
                         </div>
                         <div className='flex  flex-col gap-1'>
