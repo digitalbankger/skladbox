@@ -7,6 +7,7 @@ module.exports = {
     extend: {
       screens: {
         'xs': {'max': '674px'},
+        'sx': {'min': '674px'},
       },
       fontFamily: {
         mont: ['Montserrat', 'sans-serif'],

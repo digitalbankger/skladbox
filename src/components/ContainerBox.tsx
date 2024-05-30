@@ -6,8 +6,8 @@ import { animateInView, miniInDownMoving } from '../animations';
 
 interface Container {
   id: number,
-  size: 'big' | 'medium20' |'medium10' | 'small',
-  name: '40ft' | '20ft' |'10ft' | '5ft',
+  size: 'big' | 'medium20' |'medium10' | 'small' | 'smallest',
+  name: '40ft' | '20ft' |'10ft' | '5ft' | '3ft',
   square: string,
   volume: string,
   length: string,
@@ -18,9 +18,10 @@ interface Container {
 
 const fakeContainers: Container[] = [
   { id: 1, size: 'big', name: '40ft', square: '30м²', volume: '76м³', length: '12м', height: '2.4', width: '2.7', price: '20 000₽/м' },
-  { id: 2, size: 'medium20', name: '20ft', square: '15м²', volume: '34м³', length: '6м', height: '2.4м', width: '2.3м', price: '9 000₽/м' },
-  { id: 3, size: 'medium10', name: '10ft', square: '7.5м²', volume: '19м³', length: '3м', height: '2.4м', width: '2.6м', price: '5 000₽/м' },
-  { id: 4, size: 'small', name: '5ft', square: '1.5м²', volume: '2.8м³', length: '1.5м', height: '1.5м', width: '1.5м', price: '3 500₽/м' },
+  { id: 2, size: 'medium20', name: '20ft', square: '15м²', volume: '34м³', length: '6м', height: '2.4м', width: '2.3м', price: '14 000₽/м' },
+  { id: 3, size: 'medium10', name: '10ft', square: '7.5м²', volume: '19м³', length: '3м', height: '2.4м', width: '2.6м', price: '8 000₽/м' },
+  { id: 4, size: 'small', name: '5ft', square: '5м²', volume: '12м³', length: '2.5м', height: '2.4м', width: '1.9м', price: '5 000₽/м' },
+  { id: 5, size: 'smallest', name: '3ft', square: '3.5м²', volume: '10м³', length: '2.4м', height: '2.4м', width: '1.5м', price: '3 000₽/м' },
 ];
 
 
@@ -80,7 +81,6 @@ function ContainerBox() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     await sendTelegramMessage();
-    // Добавьте здесь логику для обработки отправки формы
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {

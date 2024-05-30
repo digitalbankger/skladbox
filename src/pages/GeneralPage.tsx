@@ -265,7 +265,7 @@ export function GeneralPage() {
             transition={{ duration: 0.8 }}
             id='catalog'
         >
-            <div className='container flex flex-col relative sect-line bg-left bg-no-repeat bg-contain'>
+            <div className='container gap-8 flex flex-col relative sect-line bg-left bg-no-repeat bg-contain'>
                 <motion.h2
                     className='sm:w-[100%] w-[100%] font-exo text-3xl font-semibold sm:text-4/5xl leading-[2.4rem] sm:leading-[1.3em] text-lead-dark text-center my-6 sm:my-10'
                     variants={miniInDownMoving}
@@ -307,7 +307,7 @@ export function GeneralPage() {
 
                     <div className='flex flex-col justify-between gap-6 sm:w-1/2'>
                         <motion.div 
-                            className='w-full h-auto sm:h-[260px] sm:h-[230px] justify-start bg-white rounded-xl p-6 flex flex-col items-start shadow-md shadow-my-shad z-10 relative overflow-hidden'
+                            className='w-full h-auto sm:h-[540px] justify-start bg-white rounded-xl p-6 flex flex-col items-start shadow-md shadow-my-shad z-10 relative overflow-hidden'
                             variants={miniInDownMoving}
                             transition={{ duration: 0.5 }}
                         >
@@ -330,83 +330,93 @@ export function GeneralPage() {
                                     </div>
                                 </div>
                             </div>
-                            <img src='./assets/img/saas-3/cont10ft.png' className='sm:w-[240px] w-[220px] absolute top-0 right-0'></img>
+                            <img src='./assets/img/saas-3/cont10ft.png' className='sm:w-[440px] w-[220px] absolute top-0 right-0'></img>
                         </motion.div>
 
-                        <div className='flex flex-col sm:flex-row gap-4'>
-                            <motion.div 
-                                className='w-full h-[240px] justify-between bg-white rounded-xl p-6 flex flex-col items-start shadow-md shadow-my-shad z-0 sm:z-0 relative overflow-hidden'
-                                variants={miniInDownMoving}
-                                transition={{ duration: 0.5 }}
-                            >
-                                <h2 className='w-full font-mont font-medium text-2xl sm:text-2/5xl leading-snug text-lead-dark text-left'>
-                                    Бокс 10ft
-                                </h2>
-                                <div className='flex flex-row sm:flex-col gap-3 items-end'>
-                                    <div className='flex flex-col gap-3'>
-                                        <div className='flex flex-col gap-1 py-2 px-4 rounded-md bg-neutral'>
-                                            <p className='font-exo text-lead-dark opacity-70 font-light text-[13px] sm:text-sm'>7.5 м²</p>
-                                        </div>
-                                        <div className='flex flex-col gap-1 py-2 px-4 rounded-md bg-neutral'>
-                                            <p className='font-exo text-lead-dark opacity-70 font-light text-[13px] sm:text-sm'>19м³</p>
-                                        </div>
-                                    </div>
-                                    <div className='flex flex-col gap-1 py-2 px-4 rounded-md bg-neutral'>
-                                        <p className='font-exo text-lead-dark opacity-70 font-light text-[13px] sm:text-sm'>Д 3м х Ш 2,4м x В 2,6м</p>
-                                    </div>
-                                </div>
-                            </motion.div>
-
-                            <motion.div 
-                                className='w-full h-[240px] justify-between bg-white rounded-xl p-6 flex flex-col items-start shadow-md shadow-my-shad relative overflow-hidden'
-                                variants={miniInDownMoving}
-                                transition={{ duration: 0.5 }}
-                            >
-                                <h2 className='w-full font-mont font-medium text-2xl sm:text-2/5xl leading-snug text-lead-dark text-left'>
-                                    Бокс 5ft
-                                </h2>
-                                <div className='flex flex-row sm:flex-col gap-3 items-end z-10 sm:z-0'>
-                                    <div className='flex flex-col gap-3'>
-                                        <div className='flex flex-col gap-1 py-2 px-4 rounded-md bg-neutral'>
-                                            <p className='font-exo text-lead-dark opacity-70 font-light text-[13px] sm:text-sm'>5м²</p>
-                                        </div>
-                                        <div className='flex flex-col gap-1 py-2 px-4 rounded-md bg-neutral'>
-                                            <p className='font-exo text-lead-dark opacity-70 font-light text-[13px] sm:text-sm'>м³</p>
-                                        </div>
-                                    </div>
-                                    <div className='flex flex-col gap-1 py-2 px-4 rounded-md bg-neutral'>
-                                        <p className='font-exo text-lead-dark opacity-70 font-light text-[13px] sm:text-sm'>Д 1,5м х Ш 1,5м x В 1,5м</p>
-                                    </div>
-                                </div>
-                            </motion.div>
-
-                            <motion.div 
-                                className='w-full h-[240px] justify-between bg-white rounded-xl p-6 flex flex-col items-start shadow-md shadow-my-shad relative overflow-hidden'
-                                variants={miniInDownMoving}
-                                transition={{ duration: 0.5 }}
-                            >
-                                <h2 className='w-full font-mont font-medium text-2xl sm:text-2/5xl leading-snug text-lead-dark text-left'>
-                                    Бокс 3ft
-                                </h2>
-                                <div className='flex flex-row sm:flex-col gap-3 items-end z-10 sm:z-0'>
-                                    <div className='flex flex-col gap-3'>
-                                        <div className='flex flex-col gap-1 py-2 px-4 rounded-md bg-neutral'>
-                                            <p className='font-exo text-lead-dark opacity-70 font-light text-[13px] sm:text-sm'>3,5м²</p>
-                                        </div>
-                                        <div className='flex flex-col gap-1 py-2 px-4 rounded-md bg-neutral'>
-                                            <p className='font-exo text-lead-dark opacity-70 font-light text-[13px] sm:text-sm'>10м³</p>
-                                        </div>
-                                    </div>
-                                    <div className='flex flex-col gap-1 py-2 px-4 rounded-md bg-neutral'>
-                                        <p className='font-exo text-lead-dark opacity-70 font-light text-[13px] sm:text-sm'>Д 3,5м х Ш 2,6м x В 2,6м</p>
-                                    </div>
-                                </div>
-                            </motion.div>
-                        </div>
-
-                        <a href='#cont' className='px-6 py-4 bg-bluegen text-lead rounded-xl font-exo text-lg flex flex-row items-center justify-center gap-4 transition-transform transform group'>Узнать подробнее<img src='./assets/svg/arrow.svg' className='transition-transform transform duration-300 group-hover:translate-x-3'/></a>
+                        <a href='#cont' className='xs:hidden px-6 py-4 bg-bluegen text-lead rounded-xl font-exo text-lg flex flex-row items-center justify-center gap-4 transition-transform transform group'>Узнать подробнее<img src='./assets/svg/arrow.svg' className='transition-transform transform duration-300 group-hover:translate-x-3'/></a>
                     </div>
                 </div>
+                <div className='flex flex-col sm:flex-row gap-8 rounded-[20px] px-5 sm:p-10 py-10 sm:py-0 sm:flex-row items-start sm:items-center sm:justify-between'>
+                    <motion.div 
+                        className='w-full h-[240px] justify-between bg-white rounded-xl p-6 flex flex-col items-start shadow-md shadow-my-shad z-0 sm:z-0 relative overflow-hidden'
+                        variants={miniInDownMoving}
+                        transition={{ duration: 0.5 }}
+                    >
+                        <h2 className='w-full font-mont font-medium text-2xl sm:text-2/5xl leading-snug text-lead-dark text-left'>
+                            Бокс 10ft
+                        </h2>
+                        <div className='flex flex-col gap-3 items-start'>
+                            <div className='flex flex-col gap-1 py-2 px-2 rounded-md bg-neutral'>
+                                <p className='font-exo text-lead-dark opacity-70 font-light text-sm'>Размеры:</p>
+                                <p className='font-exo text-lead-dark opacity-70 font-light text-[13px] sm:text-sm'>Длина 3м X Ширина 2.4м Х Высота 2,6м</p>
+                            </div>
+                            <div className='flex flex-row gap-2'>
+                                <div className='flex flex-col gap-1 py-2 px-4 rounded-md bg-neutral'>
+                                    <p className='font-exo text-lead-dark opacity-70 font-light text-sm'>Площадь:</p>
+                                    <p className='font-exo text-lead-dark opacity-70 font-light text-[13px] sm:text-sm'>7.5м²</p>
+                                </div>
+                                <div className='flex flex-col gap-1 py-2 px-4 rounded-md bg-neutral'>
+                                    <p className='font-exo text-lead-dark opacity-70 font-light text-sm'>Объем:</p>
+                                    <p className='font-exo text-lead-dark opacity-70 font-light text-[13px] sm:text-sm'>19м³</p>
+                                </div>
+                            </div>
+                        </div>
+                        <img src='./assets/svg/box3.svg' className='align-right absolute bottom-[1rem] right-[1.2rem] w-[60px] sm:w-[80px]'></img>
+                    </motion.div>
+                    <motion.div 
+                        className='w-full h-[240px] justify-between bg-white rounded-xl p-6 flex flex-col items-start shadow-md shadow-my-shad relative overflow-hidden'
+                        variants={miniInDownMoving}
+                        transition={{ duration: 0.5 }}
+                    >
+                        <h2 className='w-full font-mont font-medium text-2xl sm:text-2/5xl leading-snug text-lead-dark text-left'>
+                            Бокс 5ft
+                        </h2>
+                        <div className='flex flex-col gap-3 items-start z-10 sm:z-0'>
+                            <div className='flex flex-col gap-1 py-2 px-2 rounded-md bg-neutral'>
+                                <p className='font-exo text-lead-dark opacity-70 font-light text-sm'>Размеры:</p>
+                                <p className='font-exo text-lead-dark opacity-70 font-light text-[13px] sm:text-sm'>Длина 2.4м X Ширина 1.9м Х Высота 2,6м</p>
+                            </div>
+                            <div className='flex flex-row gap-2'>
+                                <div className='flex flex-col gap-1 py-2 px-4 rounded-md bg-neutral'>
+                                    <p className='font-exo text-lead-dark opacity-70 font-light text-sm'>Площадь:</p>
+                                    <p className='font-exo text-lead-dark opacity-70 font-light text-[13px] sm:text-sm'>5м²</p>
+                                </div>
+                                <div className='flex flex-col gap-1 py-2 px-4 rounded-md bg-neutral'>
+                                    <p className='font-exo text-lead-dark opacity-70 font-light text-sm'>Объем:</p>
+                                    <p className='font-exo text-lead-dark opacity-70 font-light text-[13px] sm:text-sm'>12м³</p>
+                                </div>
+                            </div>
+                        </div>
+                        <img src='./assets/svg/box3.svg' className='align-right absolute bottom-[1rem] right-[1.2rem] w-[60px] sm:w-[80px]'></img>
+                    </motion.div>
+                    <motion.div 
+                        className='w-full h-[240px] justify-between bg-white rounded-xl p-6 flex flex-col items-start shadow-md shadow-my-shad relative overflow-hidden'
+                        variants={miniInDownMoving}
+                        transition={{ duration: 0.5 }}
+                    >
+                        <h2 className='w-full font-mont font-medium text-2xl sm:text-2/5xl leading-snug text-lead-dark text-left'>
+                            Бокс 3ft
+                        </h2>
+                        <div className='flex flex-col gap-3 items-start z-10 sm:z-0'>
+                            <div className='flex flex-col gap-1 py-2 px-2 rounded-md bg-neutral'>
+                                <p className='font-exo text-lead-dark opacity-70 font-light text-sm'>Размеры:</p>
+                                <p className='font-exo text-lead-dark opacity-70 font-light text-[13px] sm:text-sm'>Длина 2.4м X Ширина 1.5м Х Высота 2,6м</p>
+                            </div>
+                            <div className='flex flex-row gap-2'>
+                                <div className='flex flex-col gap-1 py-2 px-4 rounded-md bg-neutral'>
+                                    <p className='font-exo text-lead-dark opacity-70 font-light text-sm'>Площадь:</p>
+                                    <p className='font-exo text-lead-dark opacity-70 font-light text-[13px] sm:text-sm'>3.5м²</p>
+                                </div>
+                                <div className='flex flex-col gap-1 py-2 px-4 rounded-md bg-neutral'>
+                                    <p className='font-exo text-lead-dark opacity-70 font-light text-sm'>Объем:</p>
+                                    <p className='font-exo text-lead-dark opacity-70 font-light text-[13px] sm:text-sm'>10м³</p>
+                                </div>
+                            </div>
+                        </div>
+                        <img src='./assets/svg/box3.svg' className='align-right absolute bottom-[1rem] right-[1.2rem] w-[60px] sm:w-[80px]'></img>
+                    </motion.div>
+                </div>
+                <a href='#cont' className='sx:hidden px-6 py-4 bg-bluegen text-lead rounded-xl font-exo text-lg flex flex-row items-center justify-center gap-4 transition-transform transform group'>Узнать подробнее<img src='./assets/svg/arrow.svg' className='transition-transform transform duration-300 group-hover:translate-x-3'/></a>
             </div>
 
             <div id='rent' className='container flex flex-col items-center relative mt-20 p-5 sm:p-10'>

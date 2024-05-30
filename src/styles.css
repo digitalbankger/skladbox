@@ -13,19 +13,23 @@
   }
   
   .columns-big {
-    width: 44%;
+    width: 32%;
   }
   
   .columns-medium20 {
-    width: 26%;
+    width: 22%;
   }
     
   .columns-medium10 {
-    width: 18%;
+    width: 16%;
   }
   
   .columns-small {
-    width: 12%;
+    width: 14%;
+  }
+
+  .columns-smallest {
+    width: 10%;
   }
 
   
@@ -48,7 +52,7 @@
 
   .blue-medium10 {
     background-image: url('/public/assets/img/saas-3/Container-med10-free.png');
-    background-size: contain;
+    background-size: 90%;
     background-repeat: no-repeat;
     background-position: center center;
 
@@ -56,7 +60,14 @@
 
   .blue-small {
     background-image: url('/public/assets/img/saas-3/Container-small-free.png');
-    background-size: contain;
+    background-size: 76%;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  .blue-smallest {
+    background-image: url('/public/assets/img/saas-3/Container-small-free.png');
+    background-size: 84%;
     background-repeat: no-repeat;
     background-position: center center;
   }
@@ -78,6 +89,10 @@
     
     .columns-small {
       width: 40%;
+    }
+
+    .columns-smallest {
+      width: 30%;
     }
         
   .containers {
