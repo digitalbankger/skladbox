@@ -7,6 +7,7 @@ module.exports = {
     extend: {
       screens: {
         'xs': {'max': '674px'},
+        'pl': {'min': '675px', 'max': '960px'},
         'sx': {'min': '674px'},
       },
       fontFamily: {
@@ -50,6 +51,7 @@ module.exports = {
       },
       backgroundPosition: {
         'top-44': 'center top 44%',
+        'top-24': 'right top 24%',
       },
       
     },

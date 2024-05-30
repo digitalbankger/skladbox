@@ -109,7 +109,7 @@ export function GeneralPage() {
     return (
         <>
         <motion.div 
-            className='section h-auto sm:h-[700px] flex justify-center py-3 bg-[#f7faff] bg-top-44 sm:bg-right bg-[length:100%] sm:bg-[length:62%] bg-no-repeat'
+            className='section h-auto sm:h-[700px] flex justify-center py-3 bg-[#f7faff] bg-top-44 pl:bg-top-24 sm:bg-right bg-[length:100%] sm:bg-[length:62%] pl:bg-[length:55%] bg-no-repeat'
             style={{ backgroundImage: `url(${imageUrl})` }}
             initial="hidden"
             whileInView="visible"
@@ -120,23 +120,23 @@ export function GeneralPage() {
             <div 
                 className='container flex flex-col w-[100%] rounded-[20px] p-5 sm:p-10 pt-20 pb-10 sm:py-0 sm:flex-row items-start sm:items-center relative'
             >
-                <div className='w-[100%] sm:w-[40%]'>
+                <div className='xs:w-[100%] sm:w-[40%] pl:w-[60%]'>
                     <motion.h1
-                        className='sm:w-[100%] w-[100%] mt-4 font-exo text-3xl font-semibold uppercase sm:text-4/5xl leading-[2.4rem] sm:leading-[1.3em] text-lead-dark'
+                        className='sm:w-[100%] w-[100%] mt-4 font-exo text-3xl pl:text-3xl font-semibold uppercase sm:text-4/5xl leading-[2.4rem] sm:leading-[1.3em] text-lead-dark'
                         variants={miniInDownMoving}
                         transition={{ duration: 0.5 }}
                     >
                         Аренда складских боксов в Лыткарино
                     </motion.h1>
                     <motion.p 
-                        className='w-[100%] sm:w-[100%] text-lead-dark tracking-[1px] font-exo text-xl sm:text-xl font-extralight leading-normal mt-4 mb-11'
+                        className='w-[100%] sm:w-[100%] text-lead-dark tracking-[1px] font-exo text-xl pl:text-lg sm:text-xl font-extralight leading-normal mt-4 mb-11'
                         variants={miniInDownMoving} 
                         transition={{ duration: 0.7 }}
                     >
                         Предлагаем складские боксы для надежного хранения ваших вещей!
                     </motion.p>
                     <motion.div 
-                        className='flex flex-row justify-between sm:-mr-12 sm:-mb-20 mt-60 sm:mt-0'
+                        className='flex flex-row justify-between pl:-mr-44 sm:-mr-12 sm:-mb-20 mt-60 sm:mt-0'
                         variants={miniInDownMoving} 
                         transition={{ duration: 0.9 }}
                     >
@@ -214,7 +214,7 @@ export function GeneralPage() {
                     transition={{ duration: 0.5 }}
                 >
                     <h2
-                        className='w-[80%] font-mont font-medium text-2xl sm:text-2/5xl leading-snug text-lead text-left'
+                        className='w-[80%] pl:w-[100%] font-mont font-medium text-2xl sm:text-2/5xl pl:text-lg leading-snug text-lead text-left'
                     >
                         Аренда бокса онлайн
                     </h2>
@@ -223,7 +223,7 @@ export function GeneralPage() {
                     >
                         Подробнее
                     </p>
-                    <div className='w-[160px] h-[160px] bg-white opacity-10 absolute -top-10 -left-4 rounded-full'></div>
+                    <div className='w-[160px] pl:w-[140px] h-[160px] pl:h-[140px] bg-white opacity-10 absolute -top-10 -left-4 rounded-full'></div>
                 </motion.div>
 
                 <motion.div 
@@ -231,11 +231,11 @@ export function GeneralPage() {
                     variants={miniInDownMoving}
                     transition={{ duration: 0.5 }}
                 >
-                    <h2 className='w-[80%] font-mont font-medium text-2xl sm:text-2/5xl leading-snug text-lead-dark text-left'>
+                    <h2 className='w-[80%] pl:w-[100%] font-mont font-medium text-2xl sm:text-2/5xl pl:text-lg leading-snug text-lead-dark text-left'>
                         Охраняемая территория
                     </h2>
                     <div className='w-full flex flex-row justify-end'>
-                        <img src='./assets/svg/secure.svg' className='align-right absolute bottom-[1rem] right-[1.2rem] w-[80px] sm:w-[100px]'></img>
+                        <img src='./assets/svg/secure.svg' className='align-right absolute bottom-[1rem] right-[1.2rem] w-[80px] sm:w-[100px] pl:w-[80px]'></img>
                     </div>
                 </motion.div>
 
@@ -244,11 +244,11 @@ export function GeneralPage() {
                     variants={miniInDownMoving}
                     transition={{ duration: 0.5 }}
                 >
-                    <h2 className='w-[80%] font-mont font-medium text-2xl sm:text-2/5xl leading-snug text-lead-dark text-left'>
+                    <h2 className='w-[80%] pl:w-[100%] font-mont font-medium text-2xl sm:text-2/5xl pl:text-lg leading-snug text-lead-dark text-left'>
                         Большое количество под любые нужды
                     </h2>
                     <div className='w-full flex flex-row justify-end'>
-                        <img src='./assets/svg/box3.svg' className='align-right absolute bottom-[1rem] right-[1.2rem] w-[80px] sm:w-[100px]'></img>
+                        <img src='./assets/svg/box3.svg' className='align-right absolute bottom-[1rem] right-[1.2rem] w-[80px] sm:w-[100px] pl:w-[80px]'></img>
                     </div>
                 </motion.div>
 

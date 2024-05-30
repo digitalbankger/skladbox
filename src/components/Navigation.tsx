@@ -84,7 +84,7 @@ export function Navigation() {
                 className='container flex flex-row justify-between items-center px-5 sm:px-10 py-6 mt-1'
             >
                 <Link to="/" className='flex flex-row items-center'>
-                    <img src="./assets/svg/logo.svg" width={180}/>
+                    <img src="./assets/svg/logo.svg" className='w-[180px] pl:w-[140px]'/>
                 </Link>
 
                 {/* <ul className='sm:flex hidden'>
@@ -96,7 +96,7 @@ export function Navigation() {
 
                 <div className='flex flex-row'>
 
-                    <div className='hidden sm:flex flex-row items-center sm:mx-0 mx-3'>
+                    <div className='hidden pl:hidden sm:flex flex-row items-center sm:mx-0 mx-3'>
                         <img src="./assets/svg/loc.svg" width={28} />
                         <p className='w-[70%] text-base font-exo leading-snug font-light text-lead-dark tracking-[0.4px] ms-3'>МО, г.Лыткарино, промзона Тураево стр.22</p>
                     </div>
@@ -109,9 +109,9 @@ export function Navigation() {
                         </a>
                     </div>
 
-                    <div className='hidden sm:flex flex-row items-center sm:mx-12 mx-3'>
+                    <div className='hidden sm:flex flex-row items-center pl:mx-6 sm:mx-12 mx-3'>
                         <button
-                            className='rounded-[8px] py-3 px-6 border-[1px] border-bluegen hover:bg-bluegen hover:text-lead flex flex-row items-center text-lead text-lead-dark font-exo tracking-[0.5px] text-base'
+                            className='rounded-[8px] py-3 px-6 pl:px-3 pl:py-2 border-[1px] border-bluegen hover:bg-bluegen hover:text-lead flex flex-row items-center text-lead text-lead-dark font-exo tracking-[0.5px] text-base'
                             onClick={() => toggleModal()}
                         >
                             Заказать звонок
