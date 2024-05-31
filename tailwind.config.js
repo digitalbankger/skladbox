@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  important: true,
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
@@ -7,7 +8,7 @@ module.exports = {
     extend: {
       screens: {
         'xs': {'max': '674px'},
-        'pl': {'min': '675px', 'max': '960px'},
+        'pl': {'min': '675px', 'max': '1024px'},
         'sx': {'min': '674px'},
       },
       fontFamily: {

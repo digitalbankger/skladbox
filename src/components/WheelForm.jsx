@@ -104,8 +104,8 @@ const WheelForm = () => {
     <div className='w-full'>
       {wheels.map((wheel, index) => (
         <div key={index} className="w-full flex flex-col sm:flex-row items-center mb-4 gap-4">
-          <div className='w-full sm:w-1/4 flex flex-col items-center w-full'>
-            <label className="block text-[14px] font-extralight tracking-[0.4px] font-exo text-[#575f6e] bg-white p-1 -mb-3 z-10">Тип колеса:</label>
+          <div className='w-full sm:w-1/4 pl:w-[30%] flex flex-col items-center w-full'>
+            <label className="block text-[14px] pl:text-[10px] font-extralight tracking-[0.4px] font-exo text-[#575f6e] bg-white p-1 -mb-3 z-10">Тип колеса:</label>
             <select
               value={wheel.type}
               onChange={e => setWheels(prevState => {
@@ -120,7 +120,7 @@ const WheelForm = () => {
             </select>
           </div>
           <div className='w-full sm:w-1/4 flex flex-col items-center w-full'>
-            <label className="block text-[14px] font-extralight tracking-[0.4px] font-exo text-[#575f6e] bg-white p-1 -mb-3 z-10">Диаметр колес:</label>
+            <label className="block text-[14px] pl:text-[10px] font-extralight tracking-[0.4px] font-exo text-[#575f6e] bg-white p-1 -mb-3 z-10">Диаметр колес:</label>
             <select
               value={wheel.diameter}
               onChange={e => setWheels(prevState => {
@@ -142,7 +142,7 @@ const WheelForm = () => {
           </div>
           <div className='w-full sm:w-1/2 flex flex-row items-center gap-4'>
             <div className='flex flex-col items-center w-[40%] sm:w-[30%]'>
-              <label className="block text-[14px] font-extralight tracking-[0.4px] font-exo text-[#575f6e] bg-white p-1 -mb-1 z-10">Количество шт:</label>
+              <label className="block text-[14px] pl:text-[10px] font-extralight tracking-[0.4px] font-exo text-[#575f6e] bg-white p-1 -mb-1 z-10">Количество шт:</label>
               <div className="flex items-center">
                 <button onClick={() => changeQuantity(index, Math.max(0, parseInt(wheel.quantity) - 1))} className="bg-gray-300 text-gray-600 px-3 sm:py-3 py-4 rounded-l-xl">-</button>
                   <div className="border-gray-300 text-lg font-light border-l border-r rounded-none px-3 sm:py-3 py-4">{wheel.quantity}</div>
@@ -150,7 +150,7 @@ const WheelForm = () => {
               </div>
             </div>
             <div className='flex flex-col items-center w-[50%] sm:w-[40%]'>
-              <label className="block text-[14px] font-extralight tracking-[0.4px] font-exo text-[#575f6e] bg-white p-1 -mb-1 z-10">Срок хранения</label>
+              <label className="block text-[14px] pl:text-[10px] font-extralight tracking-[0.4px] font-exo text-[#575f6e] bg-white p-1 -mb-1 z-10">Срок хранения</label>
               <select
                 value={wheel.duration}
                 onChange={e => setWheels(prevState => {
@@ -167,8 +167,8 @@ const WheelForm = () => {
                 <option value="12">12 месяца</option>
               </select>
             </div>
-            <button onClick={() => removeWheel(index)} className="flex justify-center xs:w-[10%] sm:w-[20%] mt-4">
-              <img src='./assets/svg/trash.svg' className='w-80% sm:w-[30%]' alt='Remove wheel'/>
+            <button onClick={() => removeWheel(index)} className="flex justify-center xs:w-[10%] pl:w-[8%] sm:w-[20%] mt-4">
+              <img src='./assets/svg/trash.svg' className='w-80% pl:w-[100%] sm:w-[30%]' alt='Remove wheel'/>
             </button>
           </div>
         </div>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { motion, useTransform, useViewportScroll } from 'framer-motion'
 import { Accordion, AccordionItem } from '../components/Accordeon'
@@ -20,8 +20,30 @@ export function ShinyPage() {
     const [modalOpen, setModalOpen] = useState(false);
     const [modalMessage, setModalMessage] = useState('');
 
-    const isMobile = window.innerWidth <= 768;
-    const imageUrl = isMobile ? './assets/img/saas-3/gen-shiny-mob.webp' : './assets/img/saas-3/gen-shiny.webp';
+    const [imageUrl, setImageUrl] = useState('');
+
+    useEffect(() => {
+        const handleResize = () => {
+            const width = window.innerWidth;
+            if (width >= 675 && width <= 1024) {
+                setImageUrl('./assets/img/saas-3/gen-shin-pl.jpg');
+            } else if (width < 675) {
+                setImageUrl('./assets/img/saas-3/gen-shiny-mob.webp');
+            } else {
+                setImageUrl('./assets/img/saas-3/gen-shiny.webp');
+            }
+        };
+
+        window.addEventListener('resize', handleResize);
+
+        // Set initial image URL
+        handleResize();
+
+        // Cleanup listener on unmount
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
       setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -74,7 +96,7 @@ export function ShinyPage() {
     return (
         <>
         <motion.div 
-            className='section h-auto sm:h-[700px] flex justify-center py-3 bg-[#fafcff] bg-top-44 sm:bg-right bg-[length:100%] sm:bg-[length:62%] bg-no-repeat'
+            className='section h-auto sm:h-[700px] pl:h-[600px] flex justify-center py-3 bg-[#fafcff] bg-top-44 sm:bg-right pl:bg-left bg-[length:100%] sm:bg-[length:62%] bg-no-repeat'
             initial="hidden"
             whileInView="visible"
             viewport={{once: true}}
@@ -82,19 +104,19 @@ export function ShinyPage() {
             transition={{ duration: 0.8 }}
         >
             <div 
-                className='container flex flex-col w-[100%] rounded-[30px] p-5 sm:p-10 mt-20 pt-20 pb-10 sm:py-10 sm:pt-0 sm:flex-row items-start sm:items-center relative bg-no-repeat bg-cover'
+                className='container flex flex-col w-[100%] rounded-[30px] p-5 sm:p-10 mt-20 pt-20 pb-10 sm:py-10 sm:pt-0 sm:flex-row items-start sm:items-center relative pl:bg-right bg-no-repeat bg-cover'
                 style={{ backgroundImage: `url(${imageUrl})` }}
             >
-                <div className='w-[100%] sm:w-[40%]'>
+                <div className='w-[100%] sm:w-[40%] pl:w-[100%]'>
                     <motion.h1
-                        className='sm:w-[100%] w-[100%] font-exo text-[1.7rem] font-semibold uppercase sm:text-4/5xl leading-[2.4rem] sm:leading-[1.3em] text-lead'
+                        className='sm:w-[100%] pl:w-[80%] w-[100%] font-exo text-[1.7rem] font-semibold uppercase sm:text-4/5xl pl:text-3xl leading-[2.4rem] sm:leading-[1.3em] text-lead'
                         variants={miniInDownMoving}
                         transition={{ duration: 0.5 }}
                     >
                         Услуги безопасного хранения авто шин
                     </motion.h1>
                     <motion.p 
-                        className='w-[100%] sm:w-[90%] text-lead tracking-[1px] font-exo text-[14px] sm:text-xl font-extralight leading-normal mt-4 mb-11'
+                        className='w-[100%] sm:w-[90%] text-lead tracking-[1px] font-exo text-[14px] pl:text-[16px] sm:text-xl font-extralight leading-normal mt-4 mb-11'
                         variants={miniInDownMoving}
                         transition={{ duration: 0.7 }}
                     >

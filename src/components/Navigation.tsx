@@ -84,7 +84,7 @@ export function Navigation() {
                 className='container flex flex-row justify-between items-center px-5 sm:px-10 py-6 mt-1'
             >
                 <Link to="/" className='flex flex-row items-center'>
-                    <img src="./assets/svg/logo.svg" className='w-[180px] pl:w-[140px]'/>
+                    <img src="./assets/svg/logo.svg" className='w-[180px] pl:w-[130px]'/>
                 </Link>
 
                 {/* <ul className='sm:flex hidden'>
@@ -101,7 +101,7 @@ export function Navigation() {
                         <p className='w-[70%] text-base font-exo leading-snug font-light text-lead-dark tracking-[0.4px] ms-3'>МО, г.Лыткарино, промзона Тураево стр.22</p>
                     </div>
 
-                    <div className='hidden sm:flex flex-row pr-7'>
+                    <div className='hidden sm:flex flex-row pr-7 pl:pr-4'>
                         <img src="./assets/svg/tel.svg" width={25}/>
                         <a href='tel:+7 (965)-384-53-85' className='flex flex-col items-end ms-2'>
                             <p className='text-base font-exo font-normal text-lead-dark tracking-[0.8px]'>+7 (965)-384-53-85</p>
@@ -109,7 +109,7 @@ export function Navigation() {
                         </a>
                     </div>
 
-                    <div className='hidden sm:flex flex-row items-center pl:mx-6 sm:mx-12 mx-3'>
+                    <div className='hidden sm:flex flex-row items-center pl:mx-6 pl:ml-3 sm:mx-12 mx-3'>
                         <button
                             className='rounded-[8px] py-3 px-6 pl:px-3 pl:py-2 border-[1px] border-bluegen hover:bg-bluegen hover:text-lead flex flex-row items-center text-lead text-lead-dark font-exo tracking-[0.5px] text-base'
                             onClick={() => toggleModal()}
@@ -158,7 +158,7 @@ export function Navigation() {
                                 <span></span>
                                 <span></span>
                             </div>
-                            <span className="burger-menu__title">Меню</span>
+                            <span className="burger-menu__title pl:ml-[12px]">Меню</span>
                         </button>
                     </div>
 

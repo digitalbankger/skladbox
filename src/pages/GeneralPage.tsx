@@ -200,7 +200,7 @@ export function GeneralPage() {
 
         {/*Секция вторая*/}
         <motion.div 
-            className='section px-3 flex justify-center py-12'
+            className='section px-3 pl:px-0 flex justify-center py-12'
             initial="hidden"
             whileInView="visible"
             viewport={{once: true}}
@@ -257,7 +257,7 @@ export function GeneralPage() {
 
         {/*Секция третья*/}
         <motion.div 
-            className='section px-3 flex flex-col items-center justify-center py-12'
+            className='section px-3 pl:px-0 flex flex-col items-center justify-center py-12'
             initial="hidden"
             whileInView="visible"
             viewport={{once: true}}
@@ -276,17 +276,17 @@ export function GeneralPage() {
                 
                 <div className='flex flex-col gap-8 rounded-[20px] px-5 sm:p-10 py-10 sm:py-0 sm:flex-row items-start sm:items-center sm:justify-between'>
                     <motion.div 
-                        className='w-[100%] sm:w-1/2 justify-between bg-white rounded-xl p-6 flex flex-col items-start shadow-md shadow-my-shad z-10'
+                        className='w-[100%] sm:w-1/2 justify-between bg-white rounded-xl p-6 pl:p-4 flex flex-col items-start shadow-md shadow-my-shad z-10'
                         variants={miniInDownMoving}
                         transition={{ duration: 0.5 }}
                     >
-                        <h2 className='w-full sm:w-[80%] font-mont font-medium text-2xl sm:text-2/5xl leading-snug text-lead-dark text-left'>
+                        <h2 className='w-full pl:w-full sm:w-[80%] font-mont font-medium text-2xl pl:text-2xl sm:text-2/5xl leading-snug text-lead-dark text-left'>
                             Складской бокс 40ft
                         </h2>
-                        <div className='flex flex-col sm:flex-row gap-2 mt-5'>
+                        <div className='flex flex-col pl:flex-col sm:flex-row gap-2 mt-5'>
                             <div className='flex flex-col gap-1 py-2 px-2 rounded-md bg-neutral'>
                                 <p className='font-exo text-lead-dark opacity-70 font-light text-sm'>Размеры:</p>
-                                <p className='font-exo text-lead-dark opacity-70 font-light text-[13px] sm:text-sm'>Длина 12м X Ширина 2.4м Х Высота 2,7м</p>
+                                <p className='font-exo text-lead-dark opacity-70 font-light text-[13px] sm:text-sm'>Д 12м X Ш 2.4м Х В 2,6-м</p>
                             </div>
                             <div className='flex flex-row gap-2'>
                                 <div className='flex flex-col gap-1 py-2 px-4 rounded-md bg-neutral'>
@@ -307,17 +307,17 @@ export function GeneralPage() {
 
                     <div className='flex flex-col justify-between gap-6 sm:w-1/2'>
                         <motion.div 
-                            className='w-full h-auto sm:h-[540px] justify-start bg-white rounded-xl p-6 flex flex-col items-start shadow-md shadow-my-shad z-10 relative overflow-hidden'
+                            className='w-full h-auto sm:h-[540px] pl:h-[340px] justify-start bg-white rounded-xl p-6 pl:p-4 flex flex-col items-start shadow-md shadow-my-shad z-10 relative overflow-hidden'
                             variants={miniInDownMoving}
                             transition={{ duration: 0.5 }}
                         >
-                            <h2 className='w-full sm:w-[80%] font-mont font-medium text-2xl sm:text-2/5xl leading-snug text-lead-dark text-left'>
+                            <h2 className='w-full pl:w-full sm:w-[80%] font-mont font-medium text-2xl pl:text-2xl sm:text-2/5xl leading-snug text-lead-dark text-left'>
                                 Складской бокс 20ft
                             </h2>
-                            <div className='flex flex-col sm:flex-row gap-2 mt-20 sm:mt-5 z-10'>
+                            <div className='flex flex-col pl:flex-col sm:flex-row gap-2 mt-20 sm:mt-5 z-10'>
                                 <div className='flex flex-col gap-1 py-2 px-4 rounded-md bg-neutral'>
                                     <p className='font-exo text-lead-dark opacity-70 font-light text-sm'>Размеры:</p>
-                                    <p className='font-exo text-lead-dark opacity-70 font-light text-[13px] sm:text-sm'>Д 6м х Ш 2,4м x В 2,3м</p>
+                                    <p className='font-exo text-lead-dark opacity-70 font-light text-[13px] sm:text-sm'>Д 6м х Ш 2,4м x В 2,6м</p>
                                 </div>
                                 <div className='flex flex-row gap-2'>
                                     <div className='flex flex-col gap-1 py-2 px-4 rounded-md bg-neutral'>
@@ -330,7 +330,7 @@ export function GeneralPage() {
                                     </div>
                                 </div>
                             </div>
-                            <img src='./assets/img/saas-3/cont10ft.png' className='sm:w-[440px] w-[220px] absolute top-0 right-0'></img>
+                            <img src='./assets/img/saas-3/cont10ft.png' className='sm:w-[440px] pl:w-[250px] w-[220px] absolute top-0 pl:top-28 right-0'></img>
                         </motion.div>
 
                         <a href='#cont' className='xs:hidden px-6 py-4 bg-bluegen text-lead rounded-xl font-exo text-lg flex flex-row items-center justify-center gap-4 transition-transform transform group'>Узнать подробнее<img src='./assets/svg/arrow.svg' className='transition-transform transform duration-300 group-hover:translate-x-3'/></a>
@@ -338,17 +338,18 @@ export function GeneralPage() {
                 </div>
                 <div className='flex flex-col sm:flex-row gap-8 rounded-[20px] px-5 sm:p-10 py-10 sm:py-0 sm:flex-row items-start sm:items-center sm:justify-between'>
                     <motion.div 
-                        className='w-full h-[240px] justify-between bg-white rounded-xl p-6 flex flex-col items-start shadow-md shadow-my-shad z-0 sm:z-0 relative overflow-hidden'
+                        className='w-full h-[240px] justify-between bg-white rounded-xl p-6 pl:p-4 flex flex-col items-start shadow-md shadow-my-shad z-0 sm:z-0 relative overflow-hidden'
                         variants={miniInDownMoving}
                         transition={{ duration: 0.5 }}
                     >
-                        <h2 className='w-full font-mont font-medium text-2xl sm:text-2/5xl leading-snug text-lead-dark text-left'>
+                        <h2 className='w-full font-mont font-medium text-2xl pl:text-2xl sm:text-2/5xl leading-snug text-lead-dark text-left'>
                             Бокс 10ft
                         </h2>
                         <div className='flex flex-col gap-3 items-start'>
                             <div className='flex flex-col gap-1 py-2 px-2 rounded-md bg-neutral'>
                                 <p className='font-exo text-lead-dark opacity-70 font-light text-sm'>Размеры:</p>
-                                <p className='font-exo text-lead-dark opacity-70 font-light text-[13px] sm:text-sm'>Длина 3м X Ширина 2.4м Х Высота 2,6м</p>
+                                <p className='pl:hidden font-exo text-lead-dark opacity-70 font-light text-[13px] sm:text-sm'>Длина 3м X Ширина 2.4м Х Высота 2,6м</p>
+                                <p className='hidden pl:block font-exo text-lead-dark opacity-70 font-light text-[13px] sm:text-sm'>Д 3м X Ш 2.4м Х В 2,6м</p>
                             </div>
                             <div className='flex flex-row gap-2'>
                                 <div className='flex flex-col gap-1 py-2 px-4 rounded-md bg-neutral'>
@@ -361,20 +362,21 @@ export function GeneralPage() {
                                 </div>
                             </div>
                         </div>
-                        <img src='./assets/svg/box3.svg' className='align-right absolute bottom-[1rem] right-[1.2rem] w-[60px] sm:w-[80px]'></img>
+                        <img src='./assets/svg/box3.svg' className='pl:hidden align-right absolute bottom-[1rem] right-[1.2rem] w-[60px] sm:w-[80px]'></img>
                     </motion.div>
                     <motion.div 
-                        className='w-full h-[240px] justify-between bg-white rounded-xl p-6 flex flex-col items-start shadow-md shadow-my-shad relative overflow-hidden'
+                        className='w-full h-[240px] justify-between bg-white rounded-xl p-6 pl:p-4 flex flex-col items-start shadow-md shadow-my-shad relative overflow-hidden'
                         variants={miniInDownMoving}
                         transition={{ duration: 0.5 }}
                     >
-                        <h2 className='w-full font-mont font-medium text-2xl sm:text-2/5xl leading-snug text-lead-dark text-left'>
+                        <h2 className='w-full font-mont font-medium text-2xl pl:text-2xl sm:text-2/5xl leading-snug text-lead-dark text-left'>
                             Бокс 5ft
                         </h2>
                         <div className='flex flex-col gap-3 items-start z-10 sm:z-0'>
                             <div className='flex flex-col gap-1 py-2 px-2 rounded-md bg-neutral'>
                                 <p className='font-exo text-lead-dark opacity-70 font-light text-sm'>Размеры:</p>
-                                <p className='font-exo text-lead-dark opacity-70 font-light text-[13px] sm:text-sm'>Длина 2.4м X Ширина 1.9м Х Высота 2,6м</p>
+                                <p className='pl:hidden font-exo text-lead-dark opacity-70 font-light text-[13px] sm:text-sm'>Длина 2.4м X Ширина 1.9м Х Высота 2,6м</p>
+                                <p className='hidden pl:block font-exo text-lead-dark opacity-70 font-light text-[13px] sm:text-sm'>Д 2.4м X Ш 1.9м Х В 2,6м</p>
                             </div>
                             <div className='flex flex-row gap-2'>
                                 <div className='flex flex-col gap-1 py-2 px-4 rounded-md bg-neutral'>
@@ -387,20 +389,21 @@ export function GeneralPage() {
                                 </div>
                             </div>
                         </div>
-                        <img src='./assets/svg/box3.svg' className='align-right absolute bottom-[1rem] right-[1.2rem] w-[60px] sm:w-[80px]'></img>
+                        <img src='./assets/svg/box3.svg' className='pl:hidden align-right absolute bottom-[1rem] right-[1.2rem] w-[60px] sm:w-[80px]'></img>
                     </motion.div>
                     <motion.div 
-                        className='w-full h-[240px] justify-between bg-white rounded-xl p-6 flex flex-col items-start shadow-md shadow-my-shad relative overflow-hidden'
+                        className='w-full h-[240px] justify-between bg-white rounded-xl p-6 pl:p-4 flex flex-col items-start shadow-md shadow-my-shad relative overflow-hidden'
                         variants={miniInDownMoving}
                         transition={{ duration: 0.5 }}
                     >
-                        <h2 className='w-full font-mont font-medium text-2xl sm:text-2/5xl leading-snug text-lead-dark text-left'>
+                        <h2 className='w-full font-mont font-medium text-2xl pl:text-2xl sm:text-2/5xl leading-snug text-lead-dark text-left'>
                             Бокс 3ft
                         </h2>
                         <div className='flex flex-col gap-3 items-start z-10 sm:z-0'>
                             <div className='flex flex-col gap-1 py-2 px-2 rounded-md bg-neutral'>
                                 <p className='font-exo text-lead-dark opacity-70 font-light text-sm'>Размеры:</p>
-                                <p className='font-exo text-lead-dark opacity-70 font-light text-[13px] sm:text-sm'>Длина 2.4м X Ширина 1.5м Х Высота 2,6м</p>
+                                <p className='pl:hidden font-exo text-lead-dark opacity-70 font-light text-[13px] sm:text-sm'>Длина 2.4м X Ширина 1.5м Х Высота 2,6м</p>
+                                <p className='hidden pl:block font-exo text-lead-dark opacity-70 font-light text-[13px] sm:text-sm'>Д 2.4м X Ш 1.5м Х В 2,6м</p>
                             </div>
                             <div className='flex flex-row gap-2'>
                                 <div className='flex flex-col gap-1 py-2 px-4 rounded-md bg-neutral'>
@@ -413,14 +416,14 @@ export function GeneralPage() {
                                 </div>
                             </div>
                         </div>
-                        <img src='./assets/svg/box3.svg' className='align-right absolute bottom-[1rem] right-[1.2rem] w-[60px] sm:w-[80px]'></img>
+                        <img src='./assets/svg/box3.svg' className='pl:hidden align-right absolute bottom-[1rem] right-[1.2rem] w-[60px] sm:w-[80px]'></img>
                     </motion.div>
                 </div>
                 <a href='#cont' className='sx:hidden px-6 py-4 bg-bluegen text-lead rounded-xl font-exo text-lg flex flex-row items-center justify-center gap-4 transition-transform transform group'>Узнать подробнее<img src='./assets/svg/arrow.svg' className='transition-transform transform duration-300 group-hover:translate-x-3'/></a>
             </div>
 
             <div id='rent' className='container flex flex-col items-center relative mt-20 p-5 sm:p-10'>
-                <h2 className='font-exo text-lead-dark font-semibold text-3xl sm:text-4/5xl leading-[1.3em] mt-0 sm:mt-10 text-center'>Как арендовать бокс?</h2>
+                <h2 className='font-exo text-lead-dark font-semibold text-3xl sm:text-4/5xl leading-[1.3em] pl:mb-4 mt-0 sm:mt-10 text-center'>Как арендовать бокс?</h2>
 
                 <motion.div
                     initial="hidden"
@@ -435,7 +438,7 @@ export function GeneralPage() {
                             transition={{ duration: 0.8 }}
                         >
                             <span className='step-item-num font-exo text-3xl font-semibold m-auto sm:m-0'>1</span>
-                            <p className='text-lead-dark-dark tracking-[1px] font-exo text-base w-full sm:text-xl font-light leading-normal absolute left-[75px] sm:left-[130px] top-[100px] sm:top-[16px] sm:w-[400px] w-[260px] sm:text-left text-center xs:left-1/2 xs:transform xs:-translate-x-1/2'>После ознакомления с боксами и их характеристиками, оставьте заявку на сайте с выбором конкретного контейнера или без, или свяжитесь с нами удобным способом</p>
+                            <p className='text-lead-dark-dark tracking-[1px] font-exo text-base w-full sm:text-xl pl:text-base font-light leading-normal absolute left-[75px] sm:left-[130px] pl:left-[80px] top-[100px] sm:top-[16px] pl:top-[0px] sm:w-[400px] pl:w-[300px] w-[260px] sm:text-left text-center xs:left-1/2 xs:transform xs:-translate-x-1/2'>После ознакомления с боксами и их характеристиками, оставьте заявку на сайте с выбором конкретного контейнера или без, или свяжитесь с нами удобным способом</p>
                         </motion.div>
                         <motion.div 
                             variants={inDownMoving} 
@@ -443,7 +446,7 @@ export function GeneralPage() {
                             transition={{ duration: 1.4 }}
                         >
                             <span className='step-item-num font-exo text-3xl font-semibold m-auto sm:m-0'>2</span>
-                            <p className='text-left sm:text-right text-lead-dark-dark tracking-[1px] font-exo text-base w-full sm:text-xl font-light leading-normal absolute left-step2 sm:right-[130px] top-[250px] sm:top-[66px] sm:w-[400px] w-[260px] sm:text-left text-center xs:left-1/2 xs:transform xs:-translate-x-1/2'>Мы проконсультируем вас, заключим договор аренды на указанное количество месяцев и вы произведете оплату</p>
+                            <p className='text-left sm:text-right text-lead-dark-dark tracking-[1px] font-exo text-base w-full sm:text-xl pl:text-base font-light leading-normal absolute left-step2 sm:right-[130px] pl:right-[90px] top-[250px] pl:top-[70px] sm:top-[66px] sm:w-[400px] pl:w-[300px] w-[260px] sm:text-left text-center xs:left-1/2 xs:transform xs:-translate-x-1/2'>Мы проконсультируем вас, заключим договор аренды на указанное количество месяцев и вы произведете оплату</p>
                         </motion.div>
                         <motion.div 
                             variants={inDownMoving} 
@@ -451,7 +454,7 @@ export function GeneralPage() {
                             transition={{ duration: 2 }}
                         >
                             <span className='step-item-num font-exo text-3xl font-semibold m-auto sm:m-0'>3</span>
-                            <p className='text-lead-dark-dark tracking-[1px] font-exo text-base w-full sm:text-xl font-light leading-normal absolute left-[75px] sm:left-[130px] top-[100px] sm:top-[30px] sm:w-[400px] w-[260px] sm:text-left text-center xs:left-1/2 xs:transform xs:-translate-x-1/2'>Далее вы можете пользоваться боксами в своих целях</p>
+                            <p className='text-lead-dark-dark tracking-[1px] font-exo text-base w-full sm:text-xl pl:text-base font-light leading-normal absolute left-[75px] sm:left-[130px] pl:left-[80px] pl:top-[15px] top-[100px] sm:top-[30px] pl:w-[300px] sm:w-[400px] w-[260px] sm:text-left text-center xs:left-1/2 xs:transform xs:-translate-x-1/2'>Далее вы можете пользоваться боксами в своих целях</p>
                         </motion.div>
                     </div>
                 </motion.div>
@@ -473,14 +476,14 @@ export function GeneralPage() {
             >
                 <div className='w-[100%] sm:w-[70%] flex flex-col justify-center'>
                     <motion.h1
-                        className='sm:w-[100%] w-[100%] font-exo text-3xl font-semibold sm:text-4/5xl leading-[2.4rem] sm:leading-[1.3em] text-lead'
+                        className='sm:w-[100%] w-[100%] font-exo text-3xl font-semibold sm:text-4/5xl pl:text-2xl leading-[2.4rem] sm:leading-[1.3em] text-lead'
                         variants={miniInDownMoving}
                         transition={{ duration: 0.5 }}
                     >
                         Для чего арендуют складские боксы?
                     </motion.h1>
                     <motion.p 
-                        className='w-[100%] sm:w-[80%] text-lead tracking-[1px] font-exo text-lg sm:text-xl font-extralight leading-normal mt-4'
+                        className='w-[100%] sm:w-[80%] text-lead tracking-[1px] font-exo text-lg pl:text-base sm:text-xl font-extralight leading-normal mt-4'
                         variants={miniInDownMoving} 
                         transition={{ duration: 0.7 }}
                     >
@@ -488,34 +491,34 @@ export function GeneralPage() {
                     </motion.p>
 
                     <div className='flex flex-row gap-4 w-full my-11'>
-                        <div className='flex flex-col w-1/2 sm:w-1/3'>
-                            <p className='font-exo text-2xl text-white mb-3'>Для бизнеса</p>
+                        <div className='flex flex-col pl:w-1/2 w-1/2 sm:w-1/3'>
+                            <p className='font-exo text-2xl pl:text-xl text-white mb-3'>Для бизнеса</p>
                             <div className='flex flex-row mb-1 items-center'>
-                                <img src='./assets/svg/item.svg' width={20}/><p className='font-exo text-base sm:text-xl ps-2 text-lead font-extralight'>Хранение товаров</p>
+                                <img src='./assets/svg/item.svg' width={20}/><p className='font-exo text-base sm:text-xl pl:text-lg ps-2 text-lead font-extralight'>Хранение товаров</p>
                             </div>
                             <div className='flex flex-row mb-1 items-center'>
-                                <img src='./assets/svg/item.svg' width={20}/><p className='font-exo text-base sm:text-xl ps-2 text-lead font-extralight'>Сезонное хранение</p>
+                                <img src='./assets/svg/item.svg' width={20}/><p className='font-exo text-base sm:text-xl pl:text-lg ps-2 text-lead font-extralight'>Сезонное хранение</p>
                             </div>
                             <div className='flex flex-row mb-1 items-center'>
-                                <img src='./assets/svg/item.svg' width={20}/><p className='font-exo text-base sm:text-xl ps-2 text-lead font-extralight'>Хранение вещей и мебели</p>
+                                <img src='./assets/svg/item.svg' width={20}/><p className='font-exo text-base sm:text-xl pl:text-lg ps-2 text-lead font-extralight'>Хранение вещей и мебели</p>
                             </div>
                         </div>
-                        <div className='flex flex-col w-1/2 sm:w-1/3'>
-                            <p className='font-exo text-2xl text-white mb-3'>Для дома</p>
+                        <div className='flex flex-col pl:w-1/2 w-1/2 sm:w-1/3'>
+                            <p className='font-exo text-2xl pl:text-xl text-white mb-3'>Для дома</p>
                             <div className='flex flex-row mb-1 items-center'>
-                                <img src='./assets/svg/item.svg' width={20}/><p className='font-exo text-base sm:text-xl ps-2 text-lead font-extralight'>Хранение шин</p>
+                                <img src='./assets/svg/item.svg' width={20}/><p className='font-exo text-base sm:text-xl pl:text-lg ps-2 text-lead font-extralight'>Хранение шин</p>
                             </div>
                             <div className='flex flex-row mb-1 items-center'>
-                                <img src='./assets/svg/item.svg' width={20}/><p className='font-exo text-base sm:text-xl ps-2 text-lead font-extralight'>Сезонное хранение</p>
+                                <img src='./assets/svg/item.svg' width={20}/><p className='font-exo text-base sm:text-xl pl:text-lg ps-2 text-lead font-extralight'>Сезонное хранение</p>
                             </div>
                             <div className='flex flex-row mb-1 items-center'>
-                                <img src='./assets/svg/item.svg' width={20}/><p className='font-exo text-base sm:text-xl ps-2 text-lead font-extralight'>Хранение мото транспорта</p>
+                                <img src='./assets/svg/item.svg' width={20}/><p className='font-exo text-base sm:text-xl pl:text-lg ps-2 text-lead font-extralight'>Хранение мото транспорта</p>
                             </div>
                         </div>
                     </div>
 
                     <motion.p 
-                        className='w-[100%] sm:w-[80%] text-lead tracking-[1px] font-exo text-xl sm:text-2xl leading-normal mb-4'
+                        className='w-[100%] sm:w-[80%] text-lead tracking-[1px] font-exo pl:text-lg text-xl sm:text-2xl leading-normal mb-4'
                         variants={miniInDownMoving} 
                         transition={{ duration: 0.7 }}
                     >
